@@ -1,0 +1,55 @@
+.body {
+  .editors {
+    b, strong {
+      font-weight: 600;
+      font-size: 20px;
+      font-style: normal;
+      line-height: normal;
+      font-feature-settings: 'tnum' on, 'lnum' on;
+      p, span {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        font-feature-settings: 'tnum' on, 'lnum' on;
+        margin-bottom: 24px;
+      }
+    }
+    p, span {
+      font-style: normal;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      font-feature-settings: 'tnum' on, 'lnum' on;
+      margin-bottom: 24px;
+      b, strong {
+        font-weight: 600;
+      }
+    }
+    ol {
+      li {
+        font-style: normal;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 190%;
+        font-feature-settings: 'tnum' on, 'lnum' on;
+        list-style: decimal;
+        list-style-position: inside;
+      }
+    }
+    ul {
+      li {
+        font-style: normal;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 190%;
+        font-feature-settings: 'tnum' on, 'lnum' on;
+        list-style: disc;
+        list-style-position: inside;
+      }
+    }
+  }
+}

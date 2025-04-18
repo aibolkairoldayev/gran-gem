@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Source Sans 3", serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.main {
+    min-height: 800px;
+    @media(max-width: 576px) {
+      min-height: 500px;
+    }
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+a, button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+input,textarea {
+    background: none;
+    border: none;
+    outline: none;
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+ol,
+ul {
+    margin-top: 0;
+    margin-bottom: 0rem;
+    padding-left: 0rem;
+    li {
+        list-style-type: none;
+    }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0rem;
+    font-weight: 500;
+    line-height: 1;
+    cursor: default;
+}
+
+img {
+    max-width: 100%;
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+    box-shadow: none;
+}
