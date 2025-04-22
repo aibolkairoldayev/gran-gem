@@ -46,7 +46,7 @@
                 <div class="cart__btn">
                     <img src="assets/img/icons/cart.svg" alt="icon">
                 </div>
-                <div class="burger__btn">
+                <div class="burger__btn" onClick="openBurger()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M3 10H21" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
                         <path d="M3 15H21" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
@@ -75,598 +75,141 @@
 </header>
 
 <div class="burger">
-    <div class="burger__top">
-        <div class="burger__logo">
-            <a href="/">
-                <img src="assets/img/icons/logo2.svg" alt="logo">
-            </a>
-            <div class="burger__close">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M5.63574 6.63604L18.3637 19.364" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M5.63574 19.364L18.3637 6.63604" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
+    <div class="burger__wrapper"></div>
+    <div class="burger__content">
+        <div class="burger__top">
+            <div class="burger__logo">
+                <a href="/">
+                    <img src="assets/img/icons/logo2.svg" alt="logo">
+                </a>
+                <div class="burger__icons">
+                    <div class="burger__hiddens">
+                        <div class="favs__btn">
+                            <img src="assets/img/icons/favs2.svg" alt="icon">
+                        </div>
+                        <div class="cart__btn">
+                            <img src="assets/img/icons/cart2.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="burger__close" onClick="closeBurger()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5.63574 6.63604L18.3637 19.364" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M5.63574 19.364L18.3637 6.63604" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="burger__menu">
+                <div href="" class="burger__main">
+                    <b>Коллекции</b>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none">
+                        <path d="M1.92886 0.550257L0.514648 1.96447L8.99993 10.4497L17.4852 1.96447L16.071 0.550255L8.99993 7.62132L1.92886 0.550257Z" fill="white"/>
+                    </svg>
+                </div>
+                <ul class="burger__submenu">
+                    <li class="burger__menu--small">
+                        <a href="">Все коллекции</a>
+                    </li>
+                    <li class="burger__menu--small">
+                        <a href="">Для неё</a>
+                    </li>
+                    <li class="burger__menu--small active">
+                        <a href="">Для него</a>
+                    </li>
+                    <li class="burger__menu--small">
+                        <a href="">Gran Gem Mini</a>
+                    </li>
+                    <li class="burger__menu--small">
+                        <a href="">Эксклюзивные украшения</a>
+                    </li>
+                    <li class="burger__menu--small">
+                        <a href="">Коллекция камней</a>
+                    </li>
+                </ul>
+                <a href="" class="burger__menu--big">О Ювелирном Доме</a>
+                <a href="" class="burger__menu--big">Лаборатория</a>
+                <a href="" class="burger__menu--big">Контакты</a>
             </div>
         </div>
-
-        <div class="burger__menu">
-            <div href="" class="burger__main">
-                Коллекции
-            </div>
-            <ul class="burger__submenu">
-                <li class="burger__menu--small">
-                    <a href="">Все коллекции</a>
-                </li>
-                <li class="burger__menu--small">
-                    <a href="">Для неё</a>
-                </li>
-                <li class="burger__menu--small active">
-                    <a href="">Для него</a>
-                </li>
-                <li class="burger__menu--small">
-                    <a href="">Gran Gem Mini</a>
-                </li>
-                <li class="burger__menu--small">
-                    <a href="">Эксклюзивные украшения</a>
-                </li>
-                <li class="burger__menu--small">
-                    <a href="">Коллекция камней</a>
-                </li>
-            </ul>
-            <a href="" class="burger__menu--big">О Ювелирном Доме</a>
-            <a href="" class="burger__menu--big">Лаборатория</a>
-            <a href="" class="burger__menu--big">Контакты</a>
-        </div>
-    </div>
-    <div class="burger__bot">
-        <a href="" class="burger__lang">KZ</a>
-        <div class="burger__socials">
-            <a href="">
-                <img src="assets/img/icons/face1.svg" alt="facebook">
-            </a>
-            <a href="">
-                <img src="assets/img/icons/insta1.svg" alt="insta">
-            </a>
-        </div>
-    </div>
-</div>
-<main class="main homePage">
-    <div class="container">
-        <section class="banner">
-            <div class="banner__item">
-                <div class="banner__img">
-                    <picture>
-                        <img src="assets/img/banner1.png" alt="banner">
-                    </picture>
-                </div>
-
-                <div class="banner__info">
-                    <div class="banner__title">
-                        Персональный подбор драгоценных камней
-                    </div>
-                    <div class="banner__bot">
-                        <div class="banner__text">
-                            Подберём драгоценный камень из нашей коллекции более чем из 90 видов, учитывая ваш 
-                            стиль, гороскоп и энергетические свойства камня
-                        </div>
-                        <a href="" class="banner__link">
-                            Подробнее
-                        </a>
-                    </div>
-                    <hr class="banner__line">
+        <div class="burger__bot">
+            <div class="burger__bot--btns">
+                <a href="" class="burger__lang">KZ</a>
+                <div class="burger__socials">
+                    <a href="">
+                        <img src="assets/img/icons/face1.svg" alt="facebook">
+                    </a>
+                    <a href="">
+                        <img src="assets/img/icons/insta1.svg" alt="insta">
+                    </a>
                 </div>
             </div>
-
-            <div class="banner__item">
-                <div class="banner__img">
-                    <picture>
-                        <img src="assets/img/banner2.png" alt="banner">
-                    </picture>
-                </div>
-
-                <div class="banner__info">
-                    <div class="banner__title">
-                        Уникальные украшения на заказ
-                    </div>
-                    <div class="banner__bot">
-                        <div class="banner__text">
-                            Разрабатываем эксклюзивный стиль ювелирных изделий: от идеи до готового изделия. 
-                            3D-моделирование позволяет увидеть украшение до его создания
-                        </div>
-                        <a href="" class="banner__link">
-                            Подробнее
-                        </a>
-                    </div>
-                    <hr class="banner__line">
-                </div>
-            </div>
-
-            <div class="banner__item">
-                <div class="banner__img">
-                    <picture>
-                        <img src="assets/img/banner3.png" alt="banner">
-                    </picture>
-                </div>
-
-                <div class="banner__info">
-                    <div class="banner__title">
-                        Ремонт украшений и огранка камней
-                    </div>
-                    <div class="banner__bot">
-                        <div class="banner__text">
-                            Реставрация, пайка, замена камней, полировка и профессиональная огранка, 
-                            подчёркивающая природную красоту драгоценных камней
-                        </div>
-                        <a href="" class="banner__link">
-                            Подробнее
-                        </a>
-                    </div>
-                    <hr class="banner__line">
-                </div>
-            </div>
-
-            <div class="banner__item">
-                <div class="banner__img">
-                    <picture>
-                        <img src="assets/img/banner4.png" alt="banner">
-                    </picture>
-                </div>
-
-                <div class="banner__info">
-                    <div class="banner__title">
-                        Геммологическая экспертиза
-                    </div>
-                    <div class="banner__bot">
-                        <div class="banner__text">
-                            Проводим детальную экспертизу ювелирных изделий и драгоценных камней с выдачей 
-                            сертификатов в собственной геммологической лаборатории
-                        </div>
-                        <a href="" class="banner__link">
-                            Подробнее
-                        </a>
-                    </div>
-                    <hr class="banner__line">
-                </div>
-            </div>
-
-            <div class="banner__item">
-                <div class="banner__img">
-                    <picture>
-                        <img src="assets/img/banner1.png" alt="banner">
-                    </picture>
-                </div>
-
-                <div class="banner__info">
-                    <div class="banner__title">
-                        Скупка и оценка ювелирных изделий
-                    </div>
-                    <div class="banner__bot">
-                        <div class="banner__text">
-                            Профессиональная оценка стоимости украшений и драгоценных камней. Возможность 
-                            кредитования под залог ювелирных изделий.
-                        </div>
-                        <a href="" class="banner__link">
-                            Подробнее
-                        </a>
-                    </div>
-                    <hr class="banner__line">
-                </div>
-            </div>
-        </section>
-
-        <div class="block block1">
-            <div class="block__banner">
-                <div class="block__img">
-                    <picture>
-                        <img src="assets/img/block1.png" alt="block">
-                    </picture>
-                </div>
-                <img src="assets/img/icons/logo3.svg" alt="icon" class="block__icon">
-                <div class="block__info">
-                    <b>Для неё</b>
-                    <p>Коллекция 2025</p>
-                    
-                </div>
-            </div>
-
-            <div class="block__mid">
-                <div class="block__items">
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/her1.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Голубой топаз и бриллианты</p>
-                            <b>1 380 000 ₸</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/her2.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Колумбийский изумруд и бриллианты</p>
-                            <b>1 380 000 ₸</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/her3.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Цейлонский сапфир и бриллианты</p>
-                            <b>1 380 000 ₸</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/her4.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Изумруд(Замбия) и бриллианты</p>
-                            <b>1 380 000 ₸</b>
-                        </div>
-                    </a>
-                </div>
-                <a href="" class="block__link black__btn white576">Ещё</a>
-            </div>
-        </div>
-
-        <div class="block block2">
-            <div class="block__banner">
-                <div class="block__img">
-                    <picture>
-                        <img src="assets/img/block2.png" alt="block">
-                    </picture>
-                </div>
-                <img src="assets/img/icons/logo3.svg" alt="icon" class="block__icon">
-                <div class="block__info">
-                    <b>Для него</b>
-                    <p>Коллекция 2025</p>
-                    
-                </div>
-            </div>
-
-            <div class="block__mid">
-                <div class="block__items">
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/him1.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>бриллианты</p>
-                            <b>1 380 000 ₸</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/him2.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Сапфир (Тайланд) и бриллианты</p>
-                            <b>1 380 000 ₸</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/him3.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Белые и черные бриллианты</p>
-                            <b>1 380 000 ₸</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/him4.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Бриллиант</p>
-                            <b>1 380 000 ₸</b>
-                        </div>
-                    </a>
-                </div>
-                <a href="" class="block__link black__btn white576">Ещё</a>
-            </div>
-        </div>
-
-        <div class="block block3">
-            <div class="block__banner">
-                <div class="block__img">
-                    <picture>
-                        <img src="assets/img/block3.png" alt="block">
-                    </picture>
-                </div>
-                <img src="assets/img/icons/logo3.svg" alt="icon" class="block__icon">
-                <div class="block__info">
-                    <b>Gran Gem Mini</b>
-                    <p>Коллекция украшений до 999$</p>
-                    
-                </div>
-            </div>
-
-            <div class="block__mid">
-                <div class="block__items">
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/mini1.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Изумруд с бриллиантами</p>
-                            <b>1 380 000 ₸</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/mini2.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Сапфир с бриллиантами</p>
-                            <b>1 380 000 ₸</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/mini3.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Аметист</p>
-                            <b>1 380 000 ₸</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/mini4.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Опал с бриллиантами</p>
-                            <b>1 380 000 ₸</b>
-                        </div>
-                    </a>
-                </div>
-                <a href="" class="block__link black__btn white576">Ещё</a>
-            </div>
-        </div>
-
-        <div class="block block4">
-            <div class="block__banner">
-                <div class="block__img">
-                    <picture>
-                        <img src="assets/img/block4.png" alt="block">
-                    </picture>
-                </div>
-                <img src="assets/img/icons/logo3.svg" alt="icon" class="block__icon">
-                <div class="block__info">
-                    <b>Эксклюзивные украшения</b>
-                    <p>Коллекция 2025</p>
-                    
-                </div>
-            </div>
-
-            <div class="block__mid">
-                <div class="block__items">
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/excl1.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Шпинель с бриллиантами</p>
-                            <b>По запросу</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/excl2.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Параиба с голубыми бриллиантами</p>
-                            <b>По запросу</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/excl3.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Танзанит с Бриллиантами</p>
-                            <b>По запросу</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/excl4.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Цаворит с бриллиантами</p>
-                            <b>По запросу</b>
-                        </div>
-                    </a>
-                </div>
-                <a href="" class="block__link black__btn white576">Ещё</a>
-            </div>
-        </div>
-
-        <div class="block block5">
-            <div class="block__banner">
-                <div class="block__img">
-                    <picture>
-                        <img src="assets/img/block5.png" alt="block">
-                    </picture>
-                </div>
-                <img src="assets/img/icons/logo3.svg" alt="icon" class="block__icon">
-                <div class="block__info">
-                    <b>Коллекция камней</b>
-                    <p>Более 90 видов</p>
-                    
-                </div>
-            </div>
-
-            <div class="block__mid">
-                <div class="block__items">
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/coll1.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Аметисты и аметрины</p>
-                            <b>от 380 000 ₸</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/coll2.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Лунные камни и опалы</p>
-                            <b>от 150 000 ₸</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/coll3.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Шпинель</p>
-                            <b>от 200 000 ₸</b>
-                        </div>
-                    </a>
-                    <a href="" class="block__item main-item">
-                        <div class="block__item--favs main-item__favs">
-                            <img src="assets/img/icons/favs.svg" alt="cart">
-                        </div>
-                        <div class="main-item__img block__item--img">
-                            <picture>
-                                <img src="assets/img/coll4.png" alt="forher">
-                            </picture>
-                        </div>
-                        <div class="main-item__info">
-                            <span>48535</span>
-                            <p>Топазы</p>
-                            <b>от 320 000 ₸</b>
-                        </div>
-                    </a>
-                </div>
-                <a href="" class="block__link black__btn white576">Ещё</a>
+            <div class="burger__bot--hidden">
+                <p>г. Алматы, ул. Желтоксан, 88</p>
+                <a href="tel:77776203322">8 777 620 33 22</a>
             </div>
         </div>
     </div>
-</main>
+</div> 
+
 <footer class="footer">
     <div class="container">
+        <div class="footer__top">
+            <div class="footer__mob">
+                <a href="/" class="footer__logo">
+                    <img src="assets/img/icons/logo1.svg" alt="logo">
+                </a>
+                <div class="footer__socials mob576">
+                    <a href="">
+                        <img class="footer__socials--item" src="assets/img/icons/face2.svg" alt="social">
+                    </a>
+                    <a href="">
+                        <img class="footer__socials--item" src="assets/img/icons/insta2.svg" alt="social">
+                    </a>
+                </div>
+            </div>
 
+            <div class="footer__right">
+                <div class="footer__item">
+                    <p>Салон </p>
+                    <a href="tel:77776203322" class="footer__item--link">8 777 620 33 22</a>
+                </div>
+                <div class="footer__item">
+                    <p>Оценка и экспертиза</p>
+                    <a href="tel:77772570807" class="footer__item--link">8 777 257 08 07</a>
+                </div>
+                <div class="footer__item">
+                    <p>Администрация </p>
+                    <a href="77772380202" class="footer__item--link">8 777 238 02 02</a>
+                </div>
+                <div class="footer__item footer__email">
+                    <p>E-mail </p>
+                    <a href="mailto:grangem@mail.ru" class="footer__item--link">grangem@mail.ru</a>
+                </div>
+                <div class="footer__item">
+                    <p>г. Алматы</p>
+                    <b class="footer__item--link">ул. Желтоксан, 88</b>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bot">
+            <div class="footer__rights">
+                © 1991 — 2025  Ювелирный Дом «Gran Gem». Все права защищены.
+            </div>
+            <div class="footer__bot--links">
+                <a href="rules.html">Правила сайта</a>
+                <a href="policy.html">Политика конфиденциальности</a>
+            </div>
+            <div class="footer__socials desk576">
+                <a href="">
+                    <img class="footer__socials--item" src="assets/img/icons/face2.svg" alt="social">
+                </a>
+                <a href="">
+                    <img class="footer__socials--item" src="assets/img/icons/insta2.svg" alt="social">
+                </a>
+            </div>
+        </div>
     </div>
 </footer> 
 
