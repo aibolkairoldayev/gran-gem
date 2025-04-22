@@ -1,13 +1,13 @@
 // main page main banner
-$('.banner__slider').slick({
+$('.banner').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: false,
     dots: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    nextArrow: '<div class="arrowRight"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="23" fill=""/><path d="M11 23H35" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 11L35 23L23 35" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
-    prevArrow: '<div class="arrowLeft"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none"><circle opacity="" cx="23" cy="23" r="23" transform="rotate(-180 23 23)" fill=""/><path d="M35 23L11 23" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 35L11 23L23 11" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
+    // autoplay: true,
+    // autoplaySpeed: 2000,
+    nextArrow: '<div class="arrowRight"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.91016 19.9201L15.4302 13.4001C16.2002 12.6301 16.2002 11.3701 15.4302 10.6001L8.91016 4.08014" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
+    prevArrow: '<div class="arrowLeft"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.9998 19.9201L8.47984 13.4001C7.70984 12.6301 7.70984 11.3701 8.47984 10.6001L14.9998 4.08014" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
 });
 
 // about page slider
@@ -18,46 +18,8 @@ $('.about__slider').slick({
     dots: true,
     autoplay: true,
     autoplaySpeed: 2000,
-    nextArrow: '<div class="arrowRight"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="23" fill=""/><path d="M11 23H35" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 11L35 23L23 35" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
-    prevArrow: '<div class="arrowLeft"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none"><circle opacity="" cx="23" cy="23" r="23" transform="rotate(-180 23 23)" fill=""/><path d="M35 23L11 23" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 35L11 23L23 11" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
-});
-
-//main page partners 
-$('.partners__items').slick({
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    infinite: true,
-    autoplay: true,
-    arrows: false,
-    autoplaySpeed: 2000,
-    swipeToSlide: true,
-    responsive: [
-        {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 4,
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 3,
-            }
-        },
-        {
-            breakpoint: 576,
-            settings: {
-                slidesToShow: 2,
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1.2,
-                centerMode: true,
-            }
-        }
-    ],
+    nextArrow: '<div class="arrowRight"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none"><circle cx="23" cy="23" r="23" fill=""/><path d="M59.9102 19.9201L66.4302 13.4001C67.2002 12.6301 67.2002 11.3701 66.4302 10.6001L59.9102 4.08014" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
+    prevArrow: '<div class="arrowLeft"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.91016 19.9201L15.4302 13.4001C16.2002 12.6301 16.2002 11.3701 15.4302 10.6001L8.91016 4.08014" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
 });
 
 //event page gallery
