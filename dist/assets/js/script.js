@@ -36,3 +36,10 @@ function closeBurger() {
 $('.burger__wrapper').click(()=> {
     closeBurger()
 })
+
+//burger submenu open/close
+if($(window).width() < 768) {
+    $('.burger__main').click(()=> {
+        $('.burger__submenu').toggleClass('open')
+    })
+}
