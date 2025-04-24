@@ -214,3 +214,85 @@
 .mob576 {
     display: none;
 }
+
+.main-title {
+    color: var(--Black, #000);
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 250;
+    line-height: 40px; 
+    @media(max-width: 1200px) {
+        font-size: 62px;
+    }
+    @media(max-width: 992px) {
+        font-size: 56px;
+    }
+    @media(max-width: 768px) {
+        font-size: 50px;
+    }
+    @media(max-width: 576px) {
+        font-size: 42px;
+    }
+    @media(max-width: 480px) {
+        font-size: 36px;
+    }
+}
+
+.breads {
+    margin: 30px 0 25px;
+    display: flex;
+    align-items: center;
+    @media(max-width: 576px) {
+        margin: 20px 0 16px;
+    }
+    a {
+        color: rgba(0, 0, 0, 0.30);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 100;
+        line-height: 40px; /* 250% */
+        letter-spacing: 0.5px;
+        @media(max-width: 576px) {
+            border-radius: 5px;
+            background: #F7F7F7;
+            color: var(--Black, #231F20);
+            text-align: center;
+            font-family: "Commissioner", sans-serif;
+            font-size: 10px;
+            font-weight: 300;
+            line-height: normal;
+            padding: 10px;
+        }
+        
+    }
+    span {
+        color: rgba(0, 0, 0, 0.30);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 100;
+        line-height: 40px; /* 250% */
+        letter-spacing: 0.5px;
+        display: block;
+        margin: 0 12px;
+       
+    }
+    b {
+        color: rgba(0, 0, 0, 0.30);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 100;
+        line-height: 40px; /* 250% */
+        letter-spacing: 0.5px;
+        @media(max-width: 576px) {
+            border-radius: 5px;
+            background: rgba(134, 1, 23, 0.15);
+            color: var(--Black, #000);
+            text-align: center;
+            font-family: "Commissioner", sans-serif;
+            font-size: 10px;
+            font-weight: 300;
+            line-height: normal;
+            padding: 10px;
+        }
+    }
+}

@@ -103,13 +103,6 @@ body::-webkit-scrollbar {
   width: 0;
 }
 
-:root {
-  --black: #000;
-  --red: #860117;
-  --white: #fff;
-  --blue: #295481;
-}
-
 .main {
   padding-top: 142px;
   margin-top: 30px;
@@ -697,6 +690,56 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.main-title {
+  color: var(--Black, #000);
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 250;
+  line-height: 40px;
+}
+
+.breads {
+  margin: 30px 0 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.breads a {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 40px;
+  /* 250% */
+  letter-spacing: 0.5px;
+}
+
+.breads span {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 40px;
+  /* 250% */
+  letter-spacing: 0.5px;
+  display: block;
+  margin: 0 12px;
+}
+
+.breads b {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 40px;
+  /* 250% */
+  letter-spacing: 0.5px;
+}
+
 @media (max-width: 1400px) {
   .container {
     max-width: 1180px;
@@ -706,6 +749,10 @@ body::-webkit-scrollbar {
 @media (max-width: 1200px) {
   .container {
     max-width: 960px;
+  }
+
+  .main-title {
+    font-size: 62px;
   }
 }
 
@@ -728,6 +775,10 @@ body::-webkit-scrollbar {
 
   .main-item__img {
     height: 270px;
+  }
+
+  .main-title {
+    font-size: 56px;
   }
 }
 
@@ -826,6 +877,10 @@ body::-webkit-scrollbar {
   .main-item__img {
     height: 230px;
   }
+
+  .main-title {
+    font-size: 50px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -879,6 +934,38 @@ body::-webkit-scrollbar {
   .main-item__info p {
     font-size: 14px;
   }
+
+  .main-title {
+    font-size: 42px;
+  }
+
+  .breads {
+    margin: 20px 0 16px;
+  }
+
+  .breads a {
+    border-radius: 5px;
+    background: #F7F7F7;
+    color: var(--Black, #231F20);
+    text-align: center;
+    font-family: "Commissioner", sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    line-height: normal;
+    padding: 10px;
+  }
+
+  .breads b {
+    border-radius: 5px;
+    background: rgba(134, 1, 23, 0.15);
+    color: var(--Black, #000);
+    text-align: center;
+    font-family: "Commissioner", sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    line-height: normal;
+    padding: 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -888,5 +975,9 @@ body::-webkit-scrollbar {
 
   .main-item__img {
     height: 170px;
+  }
+
+  .main-title {
+    font-size: 36px;
   }
 }
