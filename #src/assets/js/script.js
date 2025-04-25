@@ -43,3 +43,10 @@ if($(window).width() < 768) {
         $('.burger__submenu').toggleClass('open')
     })
 }
+
+//contacts page checkbox active
+if ($('.contacts__form--label').length) {
+    $('.contacts__form--label').click(()=> {
+        $('.checked').toggleClass('active');
+    })
+} 
