@@ -1,0 +1,19 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="interface-calendar-mark--calendar-date-day-month-mark" clip-path="url(#clip0_343_4663)">
+<g id="Group">
+<path id="Vector" d="M3.85658 6.42856C3.1746 6.42856 2.52055 6.69948 2.03831 7.18171C1.55607 7.66395 1.28516 8.318 1.28516 8.99999V32.1428C1.28516 32.8248 1.55607 33.4789 2.03831 33.9611C2.52055 34.4434 3.1746 34.7143 3.85658 34.7143H32.1423C32.8243 34.7143 33.4783 34.4434 33.9606 33.9611C34.4428 33.4789 34.7137 32.8248 34.7137 32.1428V8.99999C34.7137 8.318 34.4428 7.66395 33.9606 7.18171C33.4783 6.69948 32.8243 6.42856 32.1423 6.42856H26.9994" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M9 1.28571V11.5714" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M27 1.28571V11.5714" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M9 6.42856H21.8571" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M8.9986 20.5714C9.70869 20.5714 10.2843 19.9958 10.2843 19.2857C10.2843 18.5756 9.70869 18 8.9986 18C8.28852 18 7.71289 18.5756 7.71289 19.2857C7.71289 19.9958 8.28852 20.5714 8.9986 20.5714Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_6" d="M17.9986 20.5714C18.7087 20.5714 19.2843 19.9958 19.2843 19.2857C19.2843 18.5756 18.7087 18 17.9986 18C17.2885 18 16.7129 18.5756 16.7129 19.2857C16.7129 19.9958 17.2885 20.5714 17.9986 20.5714Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_7" d="M26.9986 20.5714C27.7087 20.5714 28.2843 19.9958 28.2843 19.2857C28.2843 18.5756 27.7087 18 26.9986 18C26.2885 18 25.7129 18.5756 25.7129 19.2857C25.7129 19.9958 26.2885 20.5714 26.9986 20.5714Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_8" d="M8.9986 28.2857C9.70869 28.2857 10.2843 27.7101 10.2843 27C10.2843 26.2899 9.70869 25.7143 8.9986 25.7143C8.28852 25.7143 7.71289 26.2899 7.71289 27C7.71289 27.7101 8.28852 28.2857 8.9986 28.2857Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_343_4663">
+<rect width="36" height="36" fill="white"/>
+</clipPath>
+</defs>
+</svg>
