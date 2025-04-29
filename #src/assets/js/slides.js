@@ -19,6 +19,45 @@ $('.banner').slick({
     ],
 });
 
+//stones slider in labrory page
+if($(window).width() < 992) {
+    $('.stones__items').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        infinite: false,
+        dots: false,
+        arrows: false,
+        responsive: [           
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 5,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 4.3,
+                    slidesToScroll: 1,
+                }
+            },
+        ],
+    });
+}
+
+
+//stones slider in labrory page
+$('.lab__slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: false,
+    dots: false,
+    arrows: true,
+    nextArrow: '<div class="arrowRight"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none"><path d="M23.7617 53.1199L41.1484 35.7332C43.2017 33.6799 43.2017 30.3199 41.1484 28.2666L23.7617 10.8799" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
+    prevArrow: '<div class="arrowLeft"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none"><path d="M40.2383 10.8801L22.8516 28.2668C20.7983 30.3201 20.7983 33.6801 22.8516 35.7334L40.2383 53.1201" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
+
+});
+
 // about page slider
 $('.about__slider').slick({
     slidesToShow: 1,
@@ -108,11 +147,3 @@ if($(window).width() > 768) {
     });
 }
 
-//serv page slider
-$('.serv__slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: false,
-    dots: true,
-    arrows: false
-});
