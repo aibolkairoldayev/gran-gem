@@ -50,3 +50,25 @@ if ($('.contacts__form--label').length) {
         $('.checked').toggleClass('active');
     })
 } 
+
+
+//radio btw delivery and pickup tabs
+$('input[name="deliveryType"]').on('change', function() {
+    $('.order__tab').removeClass('active');
+    $(this).closest('.order__tab').addClass('active');
+  
+    if ($(this).val() === 'pickup') {
+      $('.order__address').removeClass('active');
+      $('#address-input').removeAttr('required');
+    } else if ($(this).val() === 'delivery') {
+      $('.order__address').addClass('active');
+      $('#address-input').attr('required', 'required');
+    }
+});
+
+//banks tab in order page
+$('input[name="bank"]').on('change', function() {
+    $('.order__pay--item').removeClass('active');
+    $(this).closest('.order__pay--item').addClass('active');
+});
+  

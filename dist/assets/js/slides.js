@@ -58,16 +58,32 @@ $('.lab__slider').slick({
 
 });
 
-// about page slider
-$('.about__slider').slick({
-    slidesToShow: 1,
+// about page slider in founder block
+$('.founder__slider').slick({
+    slidesToShow: 3,
     slidesToScroll: 1,
     infinite: false,
-    dots: true,
+    dots: false,
     autoplay: true,
     autoplaySpeed: 2000,
-    nextArrow: '<div class="arrowRight"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none"><circle cx="23" cy="23" r="23" fill=""/><path d="M59.9102 19.9201L66.4302 13.4001C67.2002 12.6301 67.2002 11.3701 66.4302 10.6001L59.9102 4.08014" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
-    prevArrow: '<div class="arrowLeft"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.91016 19.9201L15.4302 13.4001C16.2002 12.6301 16.2002 11.3701 15.4302 10.6001L8.91016 4.08014" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
+    nextArrow: '<div class="arrowRight"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none"><path d="M23.7598 53.1199L41.1464 35.7332C43.1998 33.6799 43.1998 30.3199 41.1464 28.2666L23.7598 10.8799" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
+    prevArrow: '<div class="arrowLeft"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none"><path d="M23.7598 53.1199L41.1464 35.7332C43.1998 33.6799 43.1998 30.3199 41.1464 28.2666L23.7598 10.8799" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
+    responsive: [
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 2,
+                arrows: false,
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1.2,
+                arrows: false,
+            }
+        },
+    ],
 });
 
 //event page gallery

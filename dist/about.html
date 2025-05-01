@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/svg+xml" href="./assets/img/icons/favicon.svg">
+  <link rel="stylesheet" href="./assets/css/style.min.css">
+  <link rel="stylesheet" href="./assets/css/depense.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="./assets/css/homePage.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="./assets/css/backend.min.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Geologica:wght@100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print"
+    onload="this.media='all'" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" type="text/css" media="screen" />
+  <!-- Fallback that only gets inserted when JavaScript is disabled, in which case we can't load CSS asynchronously. -->
+  <noscript>
+    <link rel="stylesheet" href="./assets/css/depense.min.css">
+    <link rel="stylesheet" href="./assets/css/homePage.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  </noscript>
+  <title>Gran Gem</title>
+</head>
+
+<body class="body">
+
+    <header class="header">
+    <div class="container">
+        <div class="header__top">
+            <div class="header__col">
+                <a href="" class="header__lang">KZ</a>
+                <div class="header__address">г. Алматы, ул. Желтоксан, 88</div>
+            </div>
+            <a href="/" class="header__logo">
+                <img src="assets/img/icons/logo1.svg" alt="logo">
+            </a>
+            <div class="header__col">
+                <a href="tel:77776203322" class="header__number">8 777 620 33 22</a>
+                <div class="favs__btn">
+                    <img src="assets/img/icons/favs.svg" alt="icon">
+                </div>
+                <div class="cart__btn">
+                    <img src="assets/img/icons/cart.svg" alt="icon">
+                </div>
+                <div class="burger__btn" onClick="openBurger()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 10H21" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M3 15H21" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <ul class="header__bot">
+            <li>
+                <a href="">Для неё</a>
+            </li>
+            <li>
+                <a href="">Для него</a>
+            </li>
+            <li>
+                <a href="">Gran Gem Mini</a>
+            </li>
+            <li>
+                <a href="">Эксклюзивные украшения</a>
+            </li>
+            <li>
+                <a href="">Коллекция камней</a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<div class="burger">
+    <div class="burger__wrapper"></div>
+    <div class="burger__content">
+        <div class="burger__top">
+            <div class="burger__logo">
+                <a href="/">
+                    <img src="assets/img/icons/logo2.svg" alt="logo">
+                </a>
+                <div class="burger__icons">
+                    <div class="burger__hiddens">
+                        <div class="favs__btn">
+                            <img src="assets/img/icons/favs2.svg" alt="icon">
+                        </div>
+                        <div class="cart__btn">
+                            <img src="assets/img/icons/cart2.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="burger__close" onClick="closeBurger()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5.63574 6.63604L18.3637 19.364" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M5.63574 19.364L18.3637 6.63604" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="burger__menu">
+                <div href="" class="burger__main">
+                    <b>Коллекции</b>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none">
+                        <path d="M1.92886 0.550257L0.514648 1.96447L8.99993 10.4497L17.4852 1.96447L16.071 0.550255L8.99993 7.62132L1.92886 0.550257Z" fill="white"/>
+                    </svg>
+                </div>
+                <ul class="burger__submenu">
+                    <li class="burger__menu--small">
+                        <a href="">Все коллекции</a>
+                    </li>
+                    <li class="burger__menu--small">
+                        <a href="">Для неё</a>
+                    </li>
+                    <li class="burger__menu--small active">
+                        <a href="">Для него</a>
+                    </li>
+                    <li class="burger__menu--small">
+                        <a href="">Gran Gem Mini</a>
+                    </li>
+                    <li class="burger__menu--small">
+                        <a href="">Эксклюзивные украшения</a>
+                    </li>
+                    <li class="burger__menu--small">
+                        <a href="">Коллекция камней</a>
+                    </li>
+                </ul>
+                <a href="" class="burger__menu--big">О Ювелирном Доме</a>
+                <a href="" class="burger__menu--big">Лаборатория</a>
+                <a href="" class="burger__menu--big">Контакты</a>
+            </div>
+        </div>
+        <div class="burger__bot">
+            <div class="burger__bot--btns">
+                <a href="" class="burger__lang">KZ</a>
+                <div class="burger__socials">
+                    <a href="">
+                        <img src="assets/img/icons/face1.svg" alt="facebook">
+                    </a>
+                    <a href="">
+                        <img src="assets/img/icons/insta1.svg" alt="insta">
+                    </a>
+                </div>
+            </div>
+            <div class="burger__bot--hidden">
+                <p>г. Алматы, ул. Желтоксан, 88</p>
+                <a href="tel:77776203322">8 777 620 33 22</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <main class="main aboutPage">
+    <div class="about">
+        <div class="container">
+            <div class="about__title main-title">Ювелирный Дом «Gran Gem»</div>
+            <div class="breads">
+                <a href="/">Главная</a>
+                <span>></span>
+                <b>Ювелирный Дом</b>
+            </div>
+        </div>
+        <div class="banner2">
+            <div class="banner2__bg">
+                <picture>
+                    <img src="assets/img/world.png" alt="bg">
+                </picture>
+            </div>
+            <div class="banner2__content">
+                <div class="banner2__top">
+                    <p>
+                        Откройте для себя роскошь натуральных кристаллов и драгоценных камней 
+                    </p>
+                    <b>со всех 5 континентов!</b>
+                </div>
+
+                <div class="banner2__bot">
+                    <div class="banner2__bot--bg">
+                        <picture>
+                            <img src="assets/img/about-banner.png" alt="bg">
+                        </picture>
+                    </div>
+                    <div class="banner2__content2">
+                        <img src="assets/img/icons/logo4.svg" alt="logo">
+                        <p>
+                            В нашей коллекции – только лучшие экземпляры, обработанные мастерами ювелирного 
+                            дома Gran Gem, чтобы вы могли приобрести 
+                        </p>
+                        <b>
+                            эксклюзивные украшения по ценам производителя
+                        </b>
+                        <a class="banner2__btn black__btn" href="collection.html">Коллекция</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="licence2">
+            <div class="container">
+                <div class="licence2__title desk576">Лицензии</div>
+            </div>
+            <div class="licence2__content black-bg">
+                <div class="container">
+                    <div class="licence2__title mob576">Лицензии</div>
+                    <div class="licence2__items">
+                        <img src="assets/img/icons/licew1.svg" alt="logo">
+                        <img src="assets/img/icons/licew2.svg" alt="logo">
+                        <img src="assets/img/icons/licew3.svg" alt="logo">
+                        <img src="assets/img/icons/licew4.svg" alt="logo">
+                        <img src="assets/img/icons/licew5.svg" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <section class="services">
+                <div class="services__title">Услуги</div>
+                <div class="services__items">
+                    <div class="services__item">
+                        <div class="services__item--top">
+                            <img class="services__item--desk" src="assets/img/serv1.png" alt="serv">
+                            <img class="services__item--mob" src="assets/img/serv6.png" alt="serv">
+                            <b>Персональный подбор драгоценных камней</b>
+                        </div>
+                        <div class="services__item--text">
+                            Подберём драгоценный камень из нашей коллекции более чем из 90 видов, учитывая ваш 
+                            стиль, гороскоп и энергетические свойства камня.  Наши специалисты учтут не только 
+                            внешние предпочтения, но и тонкие вибрации вашей личности, чтобы украшение не 
+                            просто украшало, а помогало в жизни.
+                        </div>
+                        <div class="services__item--btn">Записаться</div>
+                    </div>
+                    <div class="services__item">
+                        <div class="services__item--top">
+                            <img class="services__item--desk" src="assets/img/serv2.png" alt="serv">
+                            <img class="services__item--mob" src="assets/img/serv7.png" alt="serv">
+                            <b>Заказать уникальное украшение на заказ</b>
+                        </div>
+                        <div class="services__item--text">
+                            Разрабатываем эксклюзивный стиль ювелирных изделий: от идеи до готового изделия. 
+                            3D-моделирование позволяет увидеть украшение до его создания
+                        </div>
+                        <div class="services__item--btn">
+                            <a href="77772570807">+ 7 777 257 08 07</a>
+                        </div>
+                    </div>
+                    <div class="services__item">
+                        <div class="services__item--top">
+                            <img class="services__item--desk" src="assets/img/serv3.png" alt="serv">
+                            <img class="services__item--mob" src="assets/img/serv8.png" alt="serv">
+                            <b>Ремонт украшений и огранка камней</b>
+                        </div>
+                        <div class="services__item--text">
+                            Реставрация, пайка, замена камней, полировка и профессиональная огранка, 
+                            подчёркивающая природную красоту драгоценных камней
+                        </div>
+                        <div class="services__item--btn">
+                            <a href="77772570807">+ 7 777 257 08 07</a>
+                        </div>
+                    </div>
+                    <div class="services__item">
+                        <div class="services__item--top">
+                            <img class="services__item--desk" src="assets/img/serv4.png" alt="serv">
+                            <img class="services__item--mob" src="assets/img/serv9.png" alt="serv">
+                            <b>Геммологическая экспертиза</b>
+                        </div>
+                        <div class="services__item--text">
+                            Проводим детальную экспертизу ювелирных изделий и драгоценных камней с выдачей 
+                            сертификатов в собственной геммологической лаборатории
+                        </div>
+                        <div class="services__item--btn">
+                            <a href="lab.html">О лаборатории</a>
+                        </div>
+                    </div>
+                    <div class="services__item">
+                        <div class="services__item--top">
+                            <img class="services__item--desk" src="assets/img/serv5.png" alt="serv">
+                            <img class="services__item--mob" src="assets/img/serv10.png" alt="serv">
+                            <b>Скупка и оценка ювелирных изделий</b>
+                        </div>
+                        <div class="services__item--text">
+                            Профессиональная оценка стоимости украшений и драгоценных камней. Возможность 
+                            кредитования под залог ювелирных изделий.
+                        </div>
+                        <div class="services__item--btn">
+                            <a href="77772570807">+ 7 777 257 08 07</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="history">
+            <div class="container">
+                <div class="history__title">История</div>
+            </div>
+            <div class="history__black black-bg">
+                <div class="container">
+                    <div class="history__content">
+                        <div class="history__img">
+                            <picture>
+                                <img src="assets/img/history.png" alt="history">
+                            </picture>
+                        </div>
+                        <div class="history__right">
+                            <div class="history__top">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="71" height="47" viewBox="0 0 71 47" fill="none">
+                                    <path d="M35.7485 11.8631L41.2111 17.2822L57.894 17.318L47.5034 27.3852L31.8116 11.7006L37.8394 5.91805L57.3483 5.91254L60.5585 9.05441H68.3264L59.3557 0.165771L35.5842 0.21809L23.7207 11.7805L47.6844 35.1724L70.9993 11.8631H35.7485Z" fill="white"/>
+                                    <path d="M19.7122 0.132812H11.7744L0 11.7806L35.6406 46.867L39.4299 43.1744L8.02686 11.9237L19.7122 0.132812Z" fill="white"/>
+                                    <path d="M31.5727 0.215332L23.7212 0.29794C22.3152 1.68851 15.3769 8.42383 11.8633 11.7805L41.4315 41.0375L45.4269 37.4606L19.712 12.0255L31.5727 0.215332Z" fill="white"/>
+                                </svg>
+                                <b>SINCE 1991</b>
+                            </div>
+                            <div class="history__text">
+                                Ювелирный Дом «Gran Gem» – первая Казахстанская  ювелирная компания, 
+                                основанная в марте 1991 года. Мы стали одним из  первых предприятий в стране, 
+                                получивших лицензию Гохрана СССР* <br>
+                                на производство ювелирных украшений <br>
+                                из драгоценных металлов и камней
+                            </div>
+                            <ul>
+                                <li>
+                                    Гохран РСФСР был создан в 1920 г. с целью централизации хранения и учета всех  принадлежащих РСФСР 
+                                    ценностей, состоящих из золота, платины, серебра в слитках и изделиях из них, бриллиантов, цветных, 
+                                    драгоценных камней и жемчуга.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="invest">
+            <div class="invest__bg">
+                <picture>
+                    <img src="assets/img/invest.png" alt="bg">
+                </picture>
+
+            </div>
+            <div class="container">
+                <div class="invest__title">
+                    «Gran Gem» – это не просто украшения, это <b>вложения в вечность</b>
+                </div>
+            </div>
+        </section>
+
+        <section class="founder black-bg">
+            <div class="container">
+                <div class="founder__top">
+                    <div class="founder__left">
+                        <div class="founder__hours">
+                            <div class="founder__hours--top">
+                                <b>62,400 ч.</b>
+                                <img src="assets/img/icons/logo5.svg" alt="logo">
+                            </div>
+                            <div class="founder__text2">
+                                <p>
+                                    Основатель компании – Игорь Валентинович Грязнов, легендарный эксперт-геммолог 
+                                    с более чем 
+                                </p>
+                                <p>
+                                    30-летним опытом работы в ювелирной отрасли
+                                </p>
+                            </div>
+                        </div>
+
+                       
+                        <div class="founder__right mob768">
+                            <div class="founder__img">
+                                <picture>
+                                    <img src="assets/img/founder.png" alt="founder">
+                                </picture>
+                            </div>
+                            <div class="founder__info">
+                                <b>И. В. Грязнов</b>
+                                <p>
+                                    Первый в РК Международный Эксперт Высшей категории
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="founder__text">
+                            <img src="assets/img/icons/logo6.svg" alt="logo">
+                            <p>
+                                Он стал первым в Казахстане международным экспертом высшей категории, чье имя 
+                                ассоциируется с  безупречной репутацией и глубочайшими знаниями в мире драгоценных  
+                                камней
+                            </p>
+                        </div>
+                    </div>
+                    <div class="founder__right desk768">
+                        <div class="founder__img">
+                            <picture>
+                                <img src="assets/img/founder.png" alt="founder">
+                            </picture>
+                        </div>
+                        <div class="founder__info">
+                            <b>И. В. Грязнов</b>
+                            <p>
+                                Первый в РК Международный Эксперт Высшей категории
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="founder__bot">
+                <div class="container">
+                    <div class="founder__slider">
+                        <div class="founder__slider--item">
+                            <picture>
+                                <img src="assets/img/found1.png" alt="1">
+                            </picture>
+                        </div>
+                        <div class="founder__slider--item">
+                            <picture>
+                                <img src="assets/img/found2.png" alt="1">
+                            </picture>
+                        </div>
+                        <div class="founder__slider--item">
+                            <picture>
+                                <img src="assets/img/found3.png" alt="1">
+                            </picture>
+                        </div>
+                        <div class="founder__slider--item">
+                            <picture>
+                                <img src="assets/img/found2.png" alt="1">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+    <footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__mob">
+                <a href="/" class="footer__logo">
+                    <img src="assets/img/icons/logo1.svg" alt="logo">
+                </a>
+                <div class="footer__socials mob576">
+                    <a href="">
+                        <img class="footer__socials--item" src="assets/img/icons/face2.svg" alt="social">
+                    </a>
+                    <a href="">
+                        <img class="footer__socials--item" src="assets/img/icons/insta2.svg" alt="social">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__right">
+                <div class="footer__item">
+                    <p>Салон </p>
+                    <a href="tel:77776203322" class="footer__item--link">8 777 620 33 22</a>
+                </div>
+                <div class="footer__item">
+                    <p>Оценка и экспертиза</p>
+                    <a href="tel:77772570807" class="footer__item--link">8 777 257 08 07</a>
+                </div>
+                <div class="footer__item">
+                    <p>Администрация </p>
+                    <a href="77772380202" class="footer__item--link">8 777 238 02 02</a>
+                </div>
+                <div class="footer__item footer__email">
+                    <p>E-mail </p>
+                    <a href="mailto:grangem@mail.ru" class="footer__item--link">grangem@mail.ru</a>
+                </div>
+                <div class="footer__item">
+                    <p>г. Алматы</p>
+                    <b class="footer__item--link">ул. Желтоксан, 88</b>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bot">
+            <div class="footer__rights">
+                © 1991 — 2025  Ювелирный Дом «Gran Gem». Все права защищены.
+            </div>
+            <div class="footer__bot--links">
+                <a href="rules.html">Правила сайта</a>
+                <a href="policy.html">Политика конфиденциальности</a>
+            </div>
+            <div class="footer__socials desk576">
+                <a href="">
+                    <img class="footer__socials--item" src="assets/img/icons/face2.svg" alt="social">
+                </a>
+                <a href="">
+                    <img class="footer__socials--item" src="assets/img/icons/insta2.svg" alt="social">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+<div class="preloader">
+    <img src="assets/img/icons/logo.svg" alt="logo">
+</div>
+
+    
+    <script src="./assets/js/jquery-3.2.1.min.js" ></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script src="./assets/js/mask.min.js" defer></script>
+<script src="./assets/js/slick.js" defer></script>
+<script src="./assets/js/slides.min.js" defer></script>
+<script src="./assets/js/script.js" defer></script>
+
+
+</body>
+
+</html>

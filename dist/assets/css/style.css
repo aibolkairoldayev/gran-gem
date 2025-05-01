@@ -633,6 +633,10 @@ body::-webkit-scrollbar {
           box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.49);
 }
 
+.black-bg {
+  background: var(--Black, #000);
+}
+
 .main-item {
   position: relative;
 }
@@ -740,6 +744,60 @@ body::-webkit-scrollbar {
   letter-spacing: 0.5px;
 }
 
+.input-type {
+  height: 50px;
+  border-radius: 5px;
+  background: var(--Red, #F9F2F3);
+  width: 100%;
+  margin-bottom: 23px;
+  padding: 12px 25px;
+  color: var(--Black, #231F20);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input-type::-webkit-input-placeholder {
+  color: var(--Black, #231F20);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input-type::-moz-placeholder {
+  color: var(--Black, #231F20);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input-type:-ms-input-placeholder {
+  color: var(--Black, #231F20);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input-type::-ms-input-placeholder {
+  color: var(--Black, #231F20);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input-type::placeholder {
+  color: var(--Black, #231F20);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 @media (max-width: 1400px) {
   .container {
     max-width: 1180px;
@@ -753,6 +811,7 @@ body::-webkit-scrollbar {
 
   .main-title {
     font-size: 62px;
+    line-height: 120%;
   }
 }
 
@@ -880,6 +939,10 @@ body::-webkit-scrollbar {
 
   .main-title {
     font-size: 50px;
+  }
+
+  .input-type {
+    margin-bottom: 40px;
   }
 }
 
