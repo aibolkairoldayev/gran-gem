@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/svg+xml" href="./assets/img/icons/favicon.svg">
+  <link rel="stylesheet" href="./assets/css/style.min.css">
+  <link rel="stylesheet" href="./assets/css/depense.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="./assets/css/homePage.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="./assets/css/backend.min.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Geologica:wght@100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print"
+    onload="this.media='all'" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" type="text/css" media="screen" />
+  <!-- Fallback that only gets inserted when JavaScript is disabled, in which case we can't load CSS asynchronously. -->
+  <noscript>
+    <link rel="stylesheet" href="./assets/css/depense.min.css">
+    <link rel="stylesheet" href="./assets/css/homePage.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  </noscript>
+  <title>Gran Gem</title>
+</head>
+
+<body class="body">
+
+    <header class="header">
+    <div class="container">
+        <div class="header__top">
+            <div class="header__col">
+                <a href="" class="header__lang">KZ</a>
+                <div class="header__address">г. Алматы, ул. Желтоксан, 88</div>
+            </div>
+            <a href="/" class="header__logo">
+                <img src="assets/img/icons/logo1.svg" alt="logo">
+            </a>
+            <div class="header__col">
+                <a href="tel:77776203322" class="header__number">8 777 620 33 22</a>
+                <div class="favs__btn">
+                    <img src="assets/img/icons/favs.svg" alt="icon">
+                </div>
+                <div class="cart__btn">
+                    <img src="assets/img/icons/cart.svg" alt="icon">
+                </div>
+                <div class="burger__btn" onClick="openBurger()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 10H21" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M3 15H21" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <ul class="header__bot">
+            <li>
+                <a href="">Для неё</a>
+            </li>
+            <li>
+                <a href="">Для него</a>
+            </li>
+            <li>
+                <a href="">Gran Gem Mini</a>
+            </li>
+            <li>
+                <a href="">Эксклюзивные украшения</a>
+            </li>
+            <li>
+                <a href="">Коллекция камней</a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<div class="burger">
+    <div class="burger__wrapper"></div>
+    <div class="burger__content">
+        <div class="burger__top">
+            <div class="burger__logo">
+                <a href="/">
+                    <img src="assets/img/icons/logo2.svg" alt="logo">
+                </a>
+                <div class="burger__icons">
+                    <div class="burger__hiddens">
+                        <div class="favs__btn">
+                            <img src="assets/img/icons/favs2.svg" alt="icon">
+                        </div>
+                        <div class="cart__btn">
+                            <img src="assets/img/icons/cart2.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="burger__close" onClick="closeBurger()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5.63574 6.63604L18.3637 19.364" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M5.63574 19.364L18.3637 6.63604" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="burger__menu">
+                <div href="" class="burger__main">
+                    <b>Коллекции</b>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none">
+                        <path d="M1.92886 0.550257L0.514648 1.96447L8.99993 10.4497L17.4852 1.96447L16.071 0.550255L8.99993 7.62132L1.92886 0.550257Z" fill="white"/>
+                    </svg>
+                </div>
+                <ul class="burger__submenu">
+                    <li class="burger__menu--small">
+                        <a href="">Все коллекции</a>
+                    </li>
+                    <li class="burger__menu--small">
+                        <a href="">Для неё</a>
+                    </li>
+                    <li class="burger__menu--small active">
+                        <a href="">Для него</a>
+                    </li>
+                    <li class="burger__menu--small">
+                        <a href="">Gran Gem Mini</a>
+                    </li>
+                    <li class="burger__menu--small">
+                        <a href="">Эксклюзивные украшения</a>
+                    </li>
+                    <li class="burger__menu--small">
+                        <a href="">Коллекция камней</a>
+                    </li>
+                </ul>
+                <a href="" class="burger__menu--big">О Ювелирном Доме</a>
+                <a href="" class="burger__menu--big">Лаборатория</a>
+                <a href="" class="burger__menu--big">Контакты</a>
+            </div>
+        </div>
+        <div class="burger__bot">
+            <div class="burger__bot--btns">
+                <a href="" class="burger__lang">KZ</a>
+                <div class="burger__socials">
+                    <a href="">
+                        <img src="assets/img/icons/face1.svg" alt="facebook">
+                    </a>
+                    <a href="">
+                        <img src="assets/img/icons/insta1.svg" alt="insta">
+                    </a>
+                </div>
+            </div>
+            <div class="burger__bot--hidden">
+                <p>г. Алматы, ул. Желтоксан, 88</p>
+                <a href="tel:77776203322">8 777 620 33 22</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <main class="main productPage">
+    <div class="container">
+        <div class="product">
+            <div class="product__black">
+                <div class="product__title">
+                    <img src="assets/img/icons/prod1.svg" alt="left">
+                    <b>Создайте украшение своей мечты</b>
+                    <img src="assets/img/icons/prod2.svg" alt="right">
+                </div>
+                <hr class="product__line">
+                <p>
+                    Свяжитесь с нами, и наши мастера помогут создать идеальное изделие, которое станет 
+                    настоящей семейной реликвией.
+                </p>
+                <div class="product__black--btn">
+                    Подробнее
+                </div>
+            </div>
+
+            <div class="breads">
+                <a href="/">Главная</a>
+                <span>></span>
+                <a href="collection.html">Коллекции</a>
+                <span>></span>
+                <b>Для неё</b>
+                <span>></span>
+            </div>
+
+            <div class="product__content">
+                <div class="product__left">
+                    <video src=""></video>
+                    <div class="product__slider">
+                        <div class="product__slider--item">
+                            <picture>
+                                <img src="assets/img/product.png" alt="prodyct">
+                            </picture>
+                        </div>
+                        <div class="product__slider--item">
+                            <picture>
+                                <img src="assets/img/product2.png" alt="prodyct">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product__right">
+                    <div class="product__top">
+                        <div class="product__names">
+                            <div class="product__info">
+                                <div class="product__info--top">
+                                    <div class="product__name">
+                                        Кольцо с цейлонским сапфиром и бриллиантами
+                                    </div>
+                                    <div class="product__art">Артикул: 48535</div>
+                                    <div class="product__price">
+                                        <a href="">
+                                            <span>Уточнить цену</span>
+                                            <img src="assets/img/icons/whtsp.svg" alt="whtsp">
+                                        </a>
+                                        <b>Артикул: 48535</b>
+                                    </div>
+                                </div>
+
+                                <div class="product__info--bot">
+                                    <div class="product__size">
+                                        <b>Выбрать размер</b>
+                                        <div class="product__size--items">
+                                            <fieldset>
+                                                <label for="">
+                                                    <input type="text">
+                                                    <b>16</b>
+                                                </label>
+                                                <label for="">
+                                                    <input type="text">
+                                                    <b>17</b>
+                                                </label>
+                                                <label for="">
+                                                    <input type="text">
+                                                    <b>18</b>
+                                                </label>
+                                                <label for="">
+                                                    <input type="text">
+                                                    <b>19</b>
+                                                </label>
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="product__all">
+                                            <div class="product__all--top">
+                                                <img src="assets/img/icons/ruler.svg" alt="icon">
+                                                <b>Таблица размеров</b>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="product__size product__weight">
+                                        <b>Выбрать размер</b>
+                                        <div class="product__size--items">
+                                            <fieldset>
+                                                <label for="">
+                                                    <input type="text">
+                                                    <b>16</b>
+                                                </label>
+                                                <label for="">
+                                                    <input type="text">
+                                                    <b>17</b>
+                                                </label>
+                                                <label for="">
+                                                    <input type="text">
+                                                    <b>18</b>
+                                                </label>
+                                                <label for="">
+                                                    <input type="text">
+                                                    <b>19</b>
+                                                </label>
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="product__all">
+                                            <div class="product__all--top">
+                                                <img src="assets/img/icons/ruler.svg" alt="icon">
+                                                <b>Таблица размеров</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product__cart">
+                                В корзину
+                            </div>
+                        </div>
+                        <div class="product__fav">
+                                <img src="assets/img/icons/favs.svg" alt="icon">
+                                <b>Добавить к понравившимся</b>
+                        </div>
+                    </div>
+                    <div class="product__bot">
+                        <div class="product__item">
+                            <div class="product__item--top">
+                                <b>Описание</b>
+                                <img src="assets/img/icons/plus.svg" alt="icon">
+                            </div>
+                            <div class="product__item--bot">
+                                <p>
+                                    Рожденный в недрах древней пустыни, этот бриллиант несёт в себе силу 
+                                    времени и величие Африки. Его кристальная чистота и благородный блеск 
+                                    завораживают с первого взгляда. Камень весом 5,2 карата — это не просто 
+                                    драгоценность, а история в свете и форме.
+                                </p>
+                                <div class="product__items">
+                                    <div class="product__items-elem">
+                                        <b>Вес:  </b>
+                                        <span>5,2 Кт</span>
+                                    </div>
+                                    <div class="product__items-elem">
+                                        <b>Страна: </b>
+                                        <span>Намибия</span>
+                                    </div>
+                                    <div class="product__items-elem">
+                                        <b>Огранка: </b>
+                                        <span>классическая</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product__item">
+                            <div class="product__item--top">
+                                <b>Доставка и возврат</b>
+                                <img src="assets/img/icons/plus.svg" alt="icon">
+                            </div>
+                            <div class="product__item--bot">
+                                <p>
+                                    Рожденный в недрах древней пустыни, этот бриллиант несёт в себе силу 
+                                    времени и величие Африки. Его кристальная чистота и благородный блеск 
+                                    завораживают с первого взгляда. Камень весом 5,2 карата — это не просто 
+                                    драгоценность, а история в свете и форме.
+                                </p>
+                                <div class="product__items">
+                                    <div class="product__items-elem">
+                                        <b>Вес:  </b>
+                                        <span>5,2 Кт</span>
+                                    </div>
+                                    <div class="product__items-elem">
+                                        <b>Страна: </b>
+                                        <span>Намибия</span>
+                                    </div>
+                                    <div class="product__items-elem">
+                                        <b>Огранка: </b>
+                                        <span>классическая</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product__also">
+                <div class="product__also--title">С этим товаром покупают</div>
+                <div class="product__also--items">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="watch">
+        <div class="container">
+            <div class="watch__title">Вы смотрели</div>
+            <div class="category__items">
+                <a href="product.html" class="category__item">
+                    <img src="assets/img/icons/favs.svg" alt="icon" class="category__fav">
+                    <div class="category__item--img">
+                        <picture>
+                            <img src="assets/img/her1.png" alt="product">
+                        </picture>
+                    </div>
+                    <div class="category__item--info">
+                        <span>48535</span>
+                        <b>Голубой топаз и бриллианты</b>
+                        <p>Цена по запросу</p>
+                    </div>
+                </a>
+                <a href="product.html" class="category__item">
+                    <img src="assets/img/icons/favs.svg" alt="icon" class="category__fav">
+                    <div class="category__item--img">
+                        <picture>
+                            <img src="assets/img/her2.png" alt="product">
+                        </picture>
+                    </div>
+                    <div class="category__item--info">
+                        <span>48535</span>
+                        <b>Колумбийский изумруд и бриллианты</b>
+                        <p>Цена по запросу</p>
+                    </div>
+                </a>
+                <a href="product.html" class="category__item">
+                    <img src="assets/img/icons/favs.svg" alt="icon" class="category__fav">
+                    <div class="category__item--img">
+                        <picture>
+                            <img src="assets/img/her3.png" alt="product">
+                        </picture>
+                    </div>
+                    <div class="category__item--info">
+                        <span>48535</span>
+                        <b>Цейлонский сапфир и бриллианты</b>
+                        <p>Цена по запросу</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+    <footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__mob">
+                <a href="/" class="footer__logo">
+                    <img src="assets/img/icons/logo1.svg" alt="logo">
+                </a>
+                <div class="footer__socials mob576">
+                    <a href="">
+                        <img class="footer__socials--item" src="assets/img/icons/face2.svg" alt="social">
+                    </a>
+                    <a href="">
+                        <img class="footer__socials--item" src="assets/img/icons/insta2.svg" alt="social">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__right">
+                <div class="footer__item">
+                    <p>Салон </p>
+                    <a href="tel:77776203322" class="footer__item--link">8 777 620 33 22</a>
+                </div>
+                <div class="footer__item">
+                    <p>Оценка и экспертиза</p>
+                    <a href="tel:77772570807" class="footer__item--link">8 777 257 08 07</a>
+                </div>
+                <div class="footer__item">
+                    <p>Администрация </p>
+                    <a href="77772380202" class="footer__item--link">8 777 238 02 02</a>
+                </div>
+                <div class="footer__item footer__email">
+                    <p>E-mail </p>
+                    <a href="mailto:grangem@mail.ru" class="footer__item--link">grangem@mail.ru</a>
+                </div>
+                <div class="footer__item">
+                    <p>г. Алматы</p>
+                    <b class="footer__item--link">ул. Желтоксан, 88</b>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bot">
+            <div class="footer__rights">
+                © 1991 — 2025  Ювелирный Дом «Gran Gem». Все права защищены.
+            </div>
+            <div class="footer__bot--links">
+                <a href="rules.html">Правила сайта</a>
+                <a href="policy.html">Политика конфиденциальности</a>
+            </div>
+            <div class="footer__socials desk576">
+                <a href="">
+                    <img class="footer__socials--item" src="assets/img/icons/face2.svg" alt="social">
+                </a>
+                <a href="">
+                    <img class="footer__socials--item" src="assets/img/icons/insta2.svg" alt="social">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+<div class="preloader">
+    <img src="assets/img/icons/logo.svg" alt="logo">
+</div>
+
+    
+    <script src="./assets/js/jquery-3.2.1.min.js" ></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script src="./assets/js/mask.min.js" defer></script>
+<script src="./assets/js/slick.js" defer></script>
+<script src="./assets/js/slides.min.js" defer></script>
+<script src="./assets/js/script.js" defer></script>
+
+
+</body>
+
+</html>
