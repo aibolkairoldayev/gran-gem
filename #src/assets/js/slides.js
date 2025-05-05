@@ -163,3 +163,21 @@ if($(window).width() > 768) {
     });
 }
 
+//product page also block slider
+if($(window).width() < 992) {
+    $('.category__items').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: false,
+        dots: false,      
+        responsive: [
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 2.2,
+                }
+            },
+        ]   
+    });
+}
