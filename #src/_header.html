@@ -10,11 +10,15 @@
             </a>
             <div class="header__col">
                 <a href="tel:77776203322" class="header__number">8 777 620 33 22</a>
-                <div class="favs__btn" onClick="openFavs()">
-                    <img src="assets/img/icons/favs.svg" alt="icon">
+                <div class="favs__btn active" onClick="openFavs()">
+                    <img class="cart__btn--full" src="assets/img/icons/favs3.svg" alt="icon">
+                    <img class="cart__btn--empty" src="assets/img/icons/favs.svg" alt="icon">
+                    <div class="favs__number fav-count-number">2</div>
                 </div>
-                <div class="cart__btn" onClick="openCart()">
-                    <img src="assets/img/icons/cart.svg" alt="icon">
+                <div class="cart__btn active" onClick="openCart()">
+                    <img class="cart__btn--full" src="assets/img/icons/cart4.svg" alt="icon">
+                    <img class="cart__btn--empty" src="assets/img/icons/cart.svg" alt="icon">
+                    <div class="cart__number">2</div>
                 </div>
                 <div class="burger__btn" onClick="openBurger()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -54,12 +58,22 @@
                 </a>
                 <div class="burger__icons">
                     <div class="burger__hiddens">
-                        <div class="favs__btn" onClick="openFavs()">
+                        <div class="favs__btn2 active" onClick="openFavs()">
+                            <img class="cart__btn2--full" src="assets/img/icons/favs4.svg" alt="icon">
+                            <img class="cart__btn2--empty" src="assets/img/icons/favs2.svg" alt="icon">
+                            <div class="favs__number2 fav-count-number">2</div>
+                        </div>
+                        <div class="cart__btn2 active" onClick="openCart()">
+                            <img class="cart__btn2--full" src="assets/img/icons/cart3.svg" alt="icon">
+                            <img class="cart__btn2--empty" src="assets/img/icons/cart2.svg" alt="icon">
+                            <div class="cart__number2">2</div>
+                        </div>
+                        <!-- <div class="favs__btn" onClick="openFavs()">
                             <img src="assets/img/icons/favs2.svg" alt="icon">
                         </div>
                         <div class="cart__btn" onClick="openCart()">
                             <img src="assets/img/icons/cart2.svg" alt="icon">
-                        </div>
+                        </div> -->
                     </div>
                     <div class="burger__close" onClick="closeBurger()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
