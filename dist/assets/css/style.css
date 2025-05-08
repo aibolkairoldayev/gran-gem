@@ -966,7 +966,7 @@ body::-webkit-scrollbar {
   position: absolute;
   z-index: 501;
   background-color: #000;
-  opacity: 0.7;
+  opacity: 0.5;
   top: 0;
   left: 0;
   width: 100%;
@@ -1579,8 +1579,22 @@ body::-webkit-scrollbar {
     padding: 10px;
   }
 
+  .modal-type__content {
+    padding: 25px 20px;
+  }
+
   .modal-type__top {
     padding-bottom: 20px;
+  }
+
+  .modal-type__btn {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .modal-type__left a {
+    margin-right: 17px;
   }
 
   .modal-type__right a {
