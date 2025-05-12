@@ -129,8 +129,6 @@ $('.side__wrapper').click(()=> {
     closeFavs()
 })
 
-
-
 // open/close cart
 function openCart() {
     $('.cart').addClass('open');
@@ -147,4 +145,30 @@ $('.side__wrapper').click(()=> {
 // add congrats checkbox
 $('.add-congrats__label').click(()=> {
     $('.add-congrats__label').toggleClass('active');
+})
+
+//radio input in product page sizes 
+$(document).on('change', 'input[type="radio"][name="size"]', function () {
+  $(this).closest('fieldset').find('label').removeClass('active');
+  $(this).closest('label').addClass('active');
+});
+
+//cart btn activation in product page
+if ($('.product__names').length) {
+    $('.product__size--items input').click(()=> {
+        $('.product__cart').addClass('active')
+    })
+}
+
+// open/close sizing img
+function openSize() {
+    $('.sizing').addClass('open');
+    $('body').css('overflow', 'hidden');
+}
+function closeSize() {
+    $('.sizing').removeClass('open');
+    $('body').css('overflow', 'unset');
+}
+$('.sizing__wrapper').click(()=> {
+    closeSize()
 })

@@ -196,18 +196,18 @@
                 <span>></span>
             </div>
 
-            <div class="product__content">
+            <div class="product__content" id="product001">
                 <div class="product__left">
                     <video src="assets/img/vid.mp4" controls muted ></video>
                     <div class="product__slider">
                         <div class="product__slider--item">
                             <picture>
-                                <img src="assets/img/product.png" alt="prodyct">
+                                <img src="assets/img/product.png" alt="product">
                             </picture>
                         </div>
                         <div class="product__slider--item">
                             <picture>
-                                <img src="assets/img/product2.png" alt="prodyct">
+                                <img src="assets/img/product2.png" alt="product">
                             </picture>
                         </div>
                     </div>
@@ -237,25 +237,25 @@
                                         <div class="product__size--items">
                                             <fieldset>
                                                 <label for="">
-                                                    <input type="checkbox">
+                                                    <input type="radio" name="size" value="16">
                                                     <b>16</b>
                                                 </label>
                                                 <label for="">
-                                                    <input type="checkbox">
+                                                    <input type="radio" name="size" value="17">
                                                     <b>17</b>
                                                 </label>
                                                 <label for="">
-                                                    <input type="checkbox">
+                                                    <input type="radio" name="size" value="18">
                                                     <b>18</b>
                                                 </label>
                                                 <label for="">
-                                                    <input type="checkbox">
+                                                    <input type="radio" name="size" value="19">
                                                     <b>19</b>
                                                 </label>
                                             </fieldset>
                                         </div>
 
-                                        <div class="product__all">
+                                        <div class="product__all" onClick="openSize()">
                                             <div class="product__all--top">
                                                 <img src="assets/img/icons/ruler.svg" alt="icon">
                                                 <b>Таблица размеров</b>
@@ -268,7 +268,7 @@
                                         <div class="product__size--items">
                                             <fieldset>
                                                 <label for="">
-                                                    <input type="text">
+                                                    <input type="radio" name="size" value="5.2">
                                                     <b>5,2 Кт</b>
                                                 </label>
                                                
@@ -284,7 +284,8 @@
                             </div>
                         </div>
                         <div class="product__fav">
-                                <img src="assets/img/icons/favs.svg" alt="icon">
+                                <img class="product__fav--empty" src="assets/img/icons/favs.svg" alt="icon">
+                                <img class="product__fav--full" src="assets/img/icons/favs3.svg" alt="icon">
                                 <b>Добавить к понравившимся</b>
                         </div>
                     </div>
@@ -383,6 +384,12 @@
                         <p class="product0-price">1 380 000 ₸</p>
                     </a>
                 </div>
+            </div>
+        </div>
+        <div class="sizing">
+            <div class="sizing__wrapper"></div>
+            <div class="sizing__content">
+                <img src="assets/img/sizing.png" alt="sizong">
             </div>
         </div>
     </div>
@@ -588,7 +595,7 @@
     <div class="side__content">
         <div class="side__top">
             <div class="side__title">
-                <b>Избранное</b>
+                <b>Корзина</b>
                 <svg onClick="closeCart()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M6 6.00001L18.7279 18.7279" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
                     <path d="M6 18.7279L18.7279 6.00001" stroke="black" stroke-width="1.5" stroke-linecap="round"/>

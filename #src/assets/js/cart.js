@@ -1,78 +1,191 @@
 $(document).ready(function () {
-    let favs = JSON.parse(localStorage.getItem('favsItemsList')) || [];
-  
-    // Инициализация: восстановить активные классы и заполнить избранное
-    favs.forEach(function (id) {
-      const $product = $('#' + id);
-      $product.find('.add-to-fav').addClass('active');
-      addToFavoritesBlock($product);
-    });
-  
+  let favs = JSON.parse(localStorage.getItem('favsItemsList')) || [];
+
+  // Функция отрисовки блока избранного
+  function addToFavoritesBlock(data) {
+    const hasSizes = data.sizes && data.sizes.length;
+    const sizeSelector = hasSizes ? `
+      <div class="side__item--size">
+        <span>Размер: </span>
+        <div class="side__item--select" data-id="${data.id}">
+          <div class="side__item--current">${data.selectedSize}</div>
+          <div class="side__item--options">
+            ${data.sizes.map(size => `
+              <div class="side__item--option ${size === data.selectedSize ? 'active' : ''}">${size}</div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    ` : '';
+
+    const favItem = `
+      <div class="side__item" data-id="${data.id}">
+        <div class="side__item--img">
+          <picture>
+            <img src="${data.img}" alt="product">
+          </picture>
+        </div>
+        <div class="side__item--info">
+          <span>${data.code}</span>
+          <b>${data.name}</b>
+          ${sizeSelector}
+          <p>${data.price}</p>
+        </div>
+        <div class="side__del">
+          <img src="assets/img/icons/delete.svg" alt="icon">
+        </div>
+      </div>`;
+    
+    $('.favs__items').append(favItem);
+  }
+
+  function getSelectedSize($block) {
+    const $checked = $block.find('input[type="radio"]:checked');
+    if ($checked.length) return $checked.val();
+    const $first = $block.find('input[type="radio"]').first();
+    return $first.length ? $first.val() : null;
+  }
+
+  function getAllSizes($block) {
+    return $block.find('input[type="radio"]').map(function () {
+      return $(this).val();
+    }).get();
+  }
+
+  function getProductPageData($block) {
+    return {
+      id: $block.attr('id'),
+      img: $block.find('.product__slider--item').first().find('picture img').attr('src') || 'assets/img/noimage.jpg',
+      name: $block.find('.product__name').text().trim(),
+      price: $block.find('.product__price b').text().trim(),
+      code: $block.find('.product__art').text().replace('Артикул:', '').trim(),
+      sizes: getAllSizes($block),
+      selectedSize: getSelectedSize($block)
+    };
+  }
+
+  function getProductData($product) {
+    return {
+      id: $product.attr('id'),
+      img: $product.find('picture img').attr('src'),
+      name: $product.find('.product0-name').text(),
+      price: $product.find('.product0-price').text(),
+      code: $product.find('span').first().text(),
+      sizes: [],
+      selectedSize: null
+    };
+  }
+
+  // Инициализация
+  favs.forEach(item => {
+    addToFavoritesBlock(item);
+    $('#' + item.id).find('.add-to-fav').addClass('active');
+  });
+
+  $('.fav-count-number').text(favs.length);
+
+  // Клик по кнопке "в избранное" в списке
+  $('.add-to-fav').on('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const $product = $(this).closest('.main-item');
+    const id = $product.attr('id');
+    const index = favs.findIndex(item => item.id === id);
+
+    if (index !== -1) {
+      favs.splice(index, 1);
+      $(this).removeClass('active');
+      $('.side__item[data-id="' + id + '"]').remove();
+    } else {
+      const itemData = getProductData($product);
+      favs.push(itemData);
+      $(this).addClass('active');
+      addToFavoritesBlock(itemData);
+    }
+
     $('.fav-count-number').text(favs.length);
-  
-    // Обработка нажатия на иконку избранного
-    $('.add-to-fav').on('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-  
-      const $product = $(this).closest('.main-item');
-      const id = $product.attr('id');
-      const index = favs.indexOf(id);
-  
-      if (index !== -1) {
-        // Уже в избранном — удалить
-        favs.splice(index, 1);
-        $(this).removeClass('active');
-        $('.side__item[data-id="' + id + '"]').remove();
-      } else {
-        // Добавить в избранное
-        favs.push(id);
-        $(this).addClass('active');
-        addToFavoritesBlock($product);
-      }
-  
-      $('.fav-count-number').text(favs.length);
+    localStorage.setItem('favsItemsList', JSON.stringify(favs));
+  });
+
+  // Кнопка "в избранное" на странице товара
+  const $pageWrapper = $('.product__content');
+  const productId = $pageWrapper.attr('id');
+
+  if (productId && favs.find(item => item.id === productId)) {
+    $('.product__fav').addClass('active');
+  }
+
+  $('.product__fav').on('click', function () {
+    const index = favs.findIndex(item => item.id === productId);
+
+    if (index !== -1) {
+      favs.splice(index, 1);
+      $(this).removeClass('active');
+      $('.side__item[data-id="' + productId + '"]').remove();
+    } else {
+      const itemData = getProductPageData($pageWrapper);
+      favs.push(itemData);
+      $(this).addClass('active');
+      addToFavoritesBlock(itemData);
+    }
+
+    $('.fav-count-number').text(favs.length);
+    localStorage.setItem('favsItemsList', JSON.stringify(favs));
+  });
+
+  // Удаление из блока избранного
+  $(document).on('click', '.side__del', function () {
+    const $item = $(this).closest('.side__item');
+    const id = $item.data('id');
+
+    $item.remove();
+    favs = favs.filter(item => item.id !== id);
+    $('.fav-count-number').text(favs.length);
+    localStorage.setItem('favsItemsList', JSON.stringify(favs));
+    $('#' + id).find('.add-to-fav').removeClass('active');
+    $('.product__fav').removeClass('active');
+  });
+
+   // Клик по select или current
+  $(document).on('click', '.side__item--select, .side__item--current', function (e) {
+    e.stopPropagation();
+    const $select = $(this).closest('.side__item--select');
+    $('.side__item--options').not($select.find('.side__item--options')).hide();
+    $select.find('.side__item--options').toggle();
+  });
+
+  // Клик по span в side__item--size
+  $(document).on('click', '.side__item--size > span', function (e) {
+    e.stopPropagation();
+    const $select = $(this).siblings('.side__item--select');
+    $('.side__item--options').not($select.find('.side__item--options')).hide();
+    $select.find('.side__item--options').toggle();
+  });
+
+  // Клик по опции
+  $(document).on('click', '.side__item--option', function (e) {
+    e.stopPropagation();
+    const $option = $(this);
+    const selectedText = $option.text().trim();
+    const $select = $option.closest('.side__item--select');
+    const id = $select.data('id');
+
+    $select.find('.side__item--option').removeClass('active');
+    $option.addClass('active');
+    $select.find('.side__item--current').text(selectedText);
+    $select.find('.side__item--options').hide();
+
+    let favs = JSON.parse(localStorage.getItem('favsItemsList')) || [];
+    const item = favs.find(i => i.id === id);
+    if (item) {
+      item.selectedSize = selectedText;
       localStorage.setItem('favsItemsList', JSON.stringify(favs));
-    });
-  
-    // Удаление из избранного через блок favs__items
-    $(document).on('click', '.side__del', function () {
-      const $item = $(this).closest('.side__item');
-      const id = $item.data('id');
-  
-      $item.remove();
-      favs = favs.filter(item => item !== id);
-      $('.fav-count-number').text(favs.length);
-      localStorage.setItem('favsItemsList', JSON.stringify(favs));
-  
-      // Убрать класс active с основного товара
-      $('#' + id).find('.add-to-fav').removeClass('active');
-    });
-  
-    function addToFavoritesBlock($product) {
-      const id = $product.attr('id');
-      const imgSrc = $product.find('picture img').attr('src');
-      const name = $product.find('.product0-name').text();
-      const price = $product.find('.product0-price').text();
-      const code = $product.find('span').first().text();
-  
-      const favItem = `
-        <div class="side__item" data-id="${id}">
-          <div class="side__item--img">
-            <picture>
-              <img src="${imgSrc}" alt="product">
-            </picture>
-          </div>
-          <div class="side__item--info">
-            <span>${code}</span>
-            <b>${name}</b>
-            <p>${price}</p>
-          </div>
-          <div class="side__del">
-            <img src="assets/img/icons/delete.svg" alt="icon">
-          </div>
-        </div>`;
-  
-      $('.favs__items').append(favItem);
     }
   });
+
+  // Клик вне элементов — закрывает всё
+  $(document).on('click', function () {
+    $('.side__item--options').hide();
+  });
+});

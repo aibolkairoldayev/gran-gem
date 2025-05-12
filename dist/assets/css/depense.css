@@ -2651,21 +2651,36 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin-right: 8px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.product__size--items fieldset label.active {
+  border: 2px solid #000;
 }
 
 .product__size--items fieldset label b {
   color: #292D32;
-  text-align: center;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 10px;
   /* 71.429% */
   letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
 }
 
-.product__size--items fieldset label input {
-  display: none;
+.product__size--items fieldset label input[type=radio] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .product__all--top {
@@ -2675,6 +2690,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 .product__all--top img {
@@ -2712,6 +2728,13 @@
   font-weight: 500;
   line-height: normal;
   margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.product__cart.active {
+  background-color: #000;
+  cursor: pointer;
+  pointer-events: all;
 }
 
 .product__fav {
@@ -2721,6 +2744,19 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
+}
+
+.product__fav--full {
+  display: none;
+}
+
+.product__fav.active .product__fav--full {
+  display: block;
+}
+
+.product__fav.active .product__fav--empty {
+  display: none;
 }
 
 .product__fav img {
@@ -3103,6 +3139,39 @@
   height: 100%;
   min-height: 15px;
   background: #000;
+}
+
+.sizing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 600;
+  display: none;
+}
+
+.sizing.open {
+  display: block;
+}
+
+.sizing__wrapper {
+  background-color: #000;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 601;
+}
+
+.sizing__content {
+  width: 800px;
+  top: 10%;
+  left: calc(50% - 400px);
+  position: absolute;
+  z-index: 602;
 }
 
 @media (max-width: 1400px) {
@@ -3690,6 +3759,11 @@
 
   .modal3__info span {
     font-size: 22px;
+  }
+
+  .sizing__content {
+    width: 500px;
+    left: calc(50% - 250px);
   }
 }
 
@@ -4628,6 +4702,12 @@
 
   .modal3__bor {
     display: none;
+  }
+
+  .sizing__content {
+    width: 90%;
+    left: 5%;
+    top: 30%;
   }
 }
 

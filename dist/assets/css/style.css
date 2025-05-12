@@ -1201,6 +1201,61 @@ body::-webkit-scrollbar {
   margin-top: 7px;
 }
 
+.side__item--size {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.side__item--size span {
+  color: var(--Black, #000);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: normal;
+  display: block;
+  margin-right: 7px;
+}
+
+.side__item--current {
+  color: var(--Black, #000);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.side__item--select {
+  position: relative;
+  padding-right: 22px;
+}
+
+.side__item--select::after {
+  content: url("../img/icons/drop.svg");
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.side__item--options {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 100px;
+  background-color: #FFF;
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+.side__item--option {
+  text-align: center;
+}
+
 .side__title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1239,6 +1294,10 @@ body::-webkit-scrollbar {
           align-items: end;
   cursor: pointer;
   min-width: 24px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: auto;
 }
 
 .side__items {

@@ -531,6 +531,51 @@
                 margin-top: 7px;
             }
         }
+        &--size {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            
+            span {
+                color: var(--Black, #000);
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 100;
+                line-height: normal;
+                display: block;
+                margin-right: 7px;
+            }
+        }
+        &--current {
+            color: var(--Black, #000);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+        &--select {
+            position: relative;
+            padding-right: 22px;
+            &::after {
+                content: url('../img/icons/drop.svg');
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+        &--options {
+            position: absolute;
+            top: 20px;
+            right: 0;
+            width: 100px;
+            background-color: #FFF;
+            padding: 4px;
+            border-radius: 10px;
+            border: 1px solid #000;
+        }
+        &--option {
+            text-align: center;
+        }
     }
     &__title {
         display: flex;
@@ -557,6 +602,8 @@
         align-items: end;
         cursor: pointer;
         min-width: 24px;
+        height: fit-content;
+        margin-top: auto;
     }
     &__items {
         max-height: calc(100vh - 220px);
