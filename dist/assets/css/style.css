@@ -1082,6 +1082,10 @@ body::-webkit-scrollbar {
   display: block;
 }
 
+.side.favs .side__btn {
+  cursor: pointer;
+}
+
 .side__wrapper {
   background-color: #000;
   opacity: 0.5;
@@ -1343,6 +1347,8 @@ body::-webkit-scrollbar {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  margin-bottom: 30px;
+  padding-top: 20px;
 }
 
 .add-congrats input {

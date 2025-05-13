@@ -189,3 +189,120 @@ $(document).ready(function () {
     $('.side__item--options').hide();
   });
 });
+
+
+
+////////////////cart
+$(document).ready(function () {
+  // ====== INIT: Отрисовка товаров из localStorage при загрузке ======
+  let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
+  cart.forEach(item => addToCartBlock(item));
+  updateCartCount();
+  updateCartTotal();
+
+  // ====== ФУНКЦИЯ: Отрисовать товар в блоке .side.cart ======
+  function addToCartBlock(data) {
+    // Проверка на дублирование
+    if ($('.side.cart .side__item[data-id="' + data.id + '"]').length) return;
+
+    const cartItem = `
+      <div class="side__item" data-id="${data.id}">
+        <div class="side__item--img">
+          <picture>
+            <img src="${data.img}" alt="product">
+          </picture>
+        </div>
+        <div class="side__item--info">
+          <span>${data.code}</span>
+          <b>${data.name}</b>
+          ${data.selectedSize ? `<div class="side__size">Размер ${data.selectedSize}</div>` : ''}
+          <p>${data.price}</p>
+        </div>
+        <div class="side__del">
+          <img src="assets/img/icons/delete.svg" alt="icon">
+        </div>
+      </div>
+    `;
+    $('.side.cart .side__items').append(cartItem);
+  }
+
+  function getProductPageData($wrapper) {
+  return {
+    id: $wrapper.attr('id'),
+    img: $wrapper.find('.product__slider--item').first().find('picture img').attr('src') || 'assets/img/noimage.jpg',
+    code: $wrapper.find('.product__code').text(),
+    name: $wrapper.find('.product__name').text(),
+    selectedSize: $wrapper.find('.product__size--selected').text(), // если есть
+    price: $wrapper.find('.product__price').text()
+  };
+}
+
+
+  // ====== ФУНКЦИЯ: Обновить счетчик корзины ======
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
+    $('.cart-count-number').text(cart.length);
+  }
+  // ====== ФУНКЦИЯ: Обновить общую сумму корзины ======
+  function updateCartTotal() {
+  let total = 0;
+
+  $('.side.cart .side__item--info p').each(function () {
+    const priceText = $(this).text().replace(/[^\d]/g, '');
+    const price = parseInt(priceText, 10);
+    if (!isNaN(price)) total += price;
+  });
+
+  const formatted = total.toLocaleString('ru-RU').replace(/,/g, ' ');
+  $('.main-total').text(formatted + ' ₸');
+}
+
+  // ====== ДОБАВИТЬ ТОВАР В КОРЗИНУ СО СТРАНИЦЫ ТОВАРА ======
+  const $pageWrapper = $('.product__content');
+  const productId = $pageWrapper.attr('id');
+
+  $('.product__cart').on('click', function () {
+    const itemData = getProductPageData($pageWrapper);
+    let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
+
+    const alreadyInCart = cart.some(item => item.id === itemData.id);
+    if (!alreadyInCart) {
+      cart.push(itemData);
+      addToCartBlock(itemData);
+      localStorage.setItem('cartItemsList', JSON.stringify(cart));
+      updateCartCount();
+      updateCartTotal();
+    }
+  });
+
+  // ====== ДОБАВИТЬ ВСЕ ИЗ ИЗБРАННОГО В КОРЗИНУ ======
+  $(document).on('click', '.side__btn', function () {
+    const favs = JSON.parse(localStorage.getItem('favsItemsList')) || [];
+    let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
+
+    favs.forEach(favItem => {
+      const alreadyInCart = cart.some(cartItem => cartItem.id === favItem.id);
+      if (!alreadyInCart) {
+        cart.push(favItem);
+        addToCartBlock(favItem);
+      }
+    });
+
+    localStorage.setItem('cartItemsList', JSON.stringify(cart));
+    updateCartCount();
+    updateCartTotal();
+  });
+
+  // ====== УДАЛЕНИЕ ТОВАРА ИЗ КОРЗИНЫ ======
+  $(document).on('click', '.side.cart .side__del', function () {
+    const $item = $(this).closest('.side__item');
+    const id = $item.data('id');
+
+    $item.remove();
+    let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
+    cart = cart.filter(item => item.id !== id);
+    localStorage.setItem('cartItemsList', JSON.stringify(cart));
+    updateCartCount();
+    updateCartTotal();
+  });
+});

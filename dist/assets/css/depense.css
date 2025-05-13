@@ -2023,6 +2023,14 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  cursor: default;
+  pointer-events: none;
+}
+
+.order__congrats--btn.active {
+  pointer-events: all;
+  cursor: pointer;
+  background-color: #000000;
 }
 
 .order__tabs {

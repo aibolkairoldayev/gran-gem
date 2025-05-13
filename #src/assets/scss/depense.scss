@@ -2210,7 +2210,13 @@
             font-style: normal;
             font-weight: 500;
             line-height: normal;
-            
+            cursor: default;
+            pointer-events: none;
+            &.active {
+                pointer-events: all;
+                cursor: pointer;
+                background-color: #000000;
+            }
         }
     }
     &__tabs {

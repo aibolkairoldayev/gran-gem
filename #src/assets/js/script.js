@@ -172,3 +172,28 @@ function closeSize() {
 $('.sizing__wrapper').click(()=> {
     closeSize()
 })
+
+//congrats textarea in order page
+if ($('.order').length) {
+    $(document).ready(function () {
+  const $shown = $('#congrats__shown');
+  const $hidden = $('#congrats__hidden');
+  const $button = $('.order__congrats--btn');
+
+  $shown.on('input', function () {
+    if ($(this).val().trim() !== '') {
+      $button.addClass('active');
+    } else {
+      $button.removeClass('active');
+    }
+  });
+
+  $button.on('click', function () {
+    const text = $shown.val();
+    $hidden.val(text); 
+    console.log('Передано в #congrats__hidden:', $hidden.val());
+    $button.removeClass('active');
+  });
+});
+
+}
