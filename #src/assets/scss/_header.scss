@@ -104,15 +104,13 @@
 
 .burger {
     position: fixed;
-    right: -100%;
+    right: 0;
     top: 0;
+    display: none;
     height: 100%;
     width: 100%;
     z-index: 200;
     transition: .3s ease-in-out;
-    @media(max-width: 480px) {
-        right: -200%;
-    }
     &__hiddens {
         display: none;
         @media(max-width: 768px) {
@@ -154,7 +152,7 @@
         }
     }
     &.open {
-        right: 0;
+        display: block;
     }
     &__btn {
        cursor: pointer;
@@ -215,6 +213,8 @@
     }
     &__menu {
         padding-left: 80px;
+        max-height: calc(100vh - 230px);
+        overflow-y: scroll;
         @media(max-width: 576px) {
             padding-left: 20px;
         }
@@ -467,5 +467,12 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+    }
+}
+
+.burger-link {
+    &.active {
+        border-bottom: 2px solid #fff;
+        padding-bottom: 5px;
     }
 }

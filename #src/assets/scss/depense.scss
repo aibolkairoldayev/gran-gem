@@ -129,6 +129,7 @@
             @media(max-width: 576px) {
                 font-size: 32px;
                 margin-bottom: 5px;
+                font-weight: 100;
             }
         }
         p {
@@ -142,6 +143,7 @@
             }
             @media(max-width: 576px) {
                 font-size: 16px;
+                font-weight: 300;
             }
             @media(max-width: 480px) {
                 font-size: 14px;
@@ -346,6 +348,7 @@
             }
             @media(max-width: 576px) {
                 font-size: 24px;
+                font-weight: 100;
             }
         }
     }
@@ -456,6 +459,9 @@
                 font-style: normal;
                 font-weight: 250;
                 line-height: normal;
+                @media(max-width: 576px) {
+                    font-weight: 100;
+                }
                 a {
                     color: var(--Black, #231F20);
                     font-size: 12px;
@@ -833,6 +839,9 @@
             font-weight: 300;
             line-height: 150%; 
             margin-bottom: 20px;
+            @media(max-width: 576px) {
+                font-weight: 100;
+            }
         }
     }
     &__gray {
@@ -1279,6 +1288,7 @@
             }
             @media(max-width: 576px) {
                 font-size: 14px;
+                font-weight: 250;
             }
         }
         b {
@@ -1298,6 +1308,7 @@
             }
             @media(max-width: 576px) {
                 font-size: 14px;
+                font-weight: 500;
             }
         }
     }
@@ -1391,6 +1402,7 @@
         }
         @media(max-width: 576px) {
             font-size: 36px;
+            font-weight: 100;
         }
     }
     &__items {
@@ -1435,6 +1447,11 @@
             grid-area: 7 / 9 / 13 / 13;
             @media(max-width: 992px) {
                 grid-area: unset;
+            }
+        }
+        &:hover {
+            .services__item--text {
+                font-weight: 400;
             }
         }
         &--mob {
@@ -1511,11 +1528,14 @@
             font-family: "Jost", sans-serif;
             font-size: 16px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 500;
             line-height: 130%; 
             min-height: 90px;
             @media(max-width: 768px) {
                 min-height: unset;
+            }
+            @media(max-width: 576px) {
+                font-weight: 300;
             }
         }
         &--btn {
@@ -1572,6 +1592,7 @@
         }
         @media(max-width: 576px) {
             font-size: 36px;
+            font-weight: 100;
         }
     }
     &__content {
@@ -1667,6 +1688,7 @@
             font-size: 16px;
             margin-bottom: 40px;
             opacity: 0.7;
+            font-weight: 250;
         }
     }
 }
@@ -1828,6 +1850,7 @@
             }
             @media(max-width: 576px) {
                 font-size: 14px;
+                font-weight: 250;
             }
         }
     }
@@ -2193,7 +2216,10 @@
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 300;
-                line-height: 150%; /* 21px */
+                line-height: 150%;
+                @media(max-width: 576px) {
+                    font-weight: 250;
+                }
             }
         }
         &--btn {
@@ -2429,6 +2455,20 @@
             }
         }
     }
+    .contacts__form--checkout b {
+        font-weight: 200;
+        @media(max-width: 576px) {
+            font-weight: 100;
+        }
+        a {
+            font-weight: 200;
+            text-decoration: underline;
+            @media(max-width: 576px) {
+                font-weight: 400;
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 .form {
@@ -2544,9 +2584,11 @@
         &.active {
             background: var(--Red, #860117);
             color: var(--White, #FDFDFD);
+            font-weight: 600;
             @media(max-width: 576px) {
                 background: rgba(134, 1, 23, 0.15);
                 color: var(--Black, #000);
+                font-weight: 400;
             }
         }
     }
@@ -2849,6 +2891,7 @@
         }
         @media(max-width: 768px) {
             font-size: 24px;
+            font-weight: 250;
         }
     }
     &__art {
@@ -2859,6 +2902,9 @@
         line-height: 10px; /* 71.429% */
         letter-spacing: 1px;
         margin: 33px 0 24px;
+        @media(max-width: 768px) {
+            font-weight: 250;
+        }
     }
     &__price {
         b {
@@ -2867,6 +2913,9 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            @media(max-width: 768px) {
+                font-weight: 250;
+            }
         }
         a {
             display: flex;
@@ -2878,6 +2927,9 @@
                 font-weight: 400;
                 line-height: normal;
                 margin-right: 12px;
+                @media(max-width: 768px) {
+                    font-weight: 250;
+                }
             }
             img {
                 width: 24px;
@@ -3147,6 +3199,8 @@
             }
             @media(max-width: 576px) {
                 font-size: 36px;
+                font-weight: 100;
+                line-height: 110%;
             }
         }
         &--items {
@@ -3195,6 +3249,9 @@
             font-weight: 300;
             line-height: normal;
             margin: 11px 0;
+            @media(max-width: 576px) {
+                font-weight: 100;
+            }
         }
         p {
             color: var(--Red, #860117);
@@ -3202,6 +3259,9 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            @media(max-width: 576px) {
+                font-weight: 100;
+            }
         }
     }
     &__names {
@@ -3243,6 +3303,7 @@
         }
         @media(max-width: 576px) {
             font-size: 36px;
+            font-weight: 100;
         }
     }
     .container {

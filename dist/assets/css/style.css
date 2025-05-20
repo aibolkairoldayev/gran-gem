@@ -285,8 +285,9 @@ body::-webkit-scrollbar {
 
 .burger {
   position: fixed;
-  right: -100%;
+  right: 0;
   top: 0;
+  display: none;
   height: 100%;
   width: 100%;
   z-index: 200;
@@ -341,7 +342,7 @@ body::-webkit-scrollbar {
 }
 
 .burger.open {
-  right: 0;
+  display: block;
 }
 
 .burger__btn {
@@ -406,6 +407,8 @@ body::-webkit-scrollbar {
 
 .burger__menu {
   padding-left: 80px;
+  max-height: calc(100vh - 230px);
+  overflow-y: scroll;
 }
 
 .burger__menu--small {
@@ -649,6 +652,11 @@ body::-webkit-scrollbar {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+.burger-link.active {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
 }
 
 /* Slider */
@@ -1071,15 +1079,17 @@ body::-webkit-scrollbar {
 .side {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   z-index: 600;
-  display: none;
+  left: 100%;
+  -webkit-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
 }
 
 .side.open {
-  display: block;
+  left: 0;
 }
 
 .side.favs .side__btn {
@@ -1610,10 +1620,16 @@ body::-webkit-scrollbar {
 
   .main-item__info p {
     font-size: 14px;
+    font-weight: 100;
+  }
+
+  .main-item__info b {
+    font-weight: 100;
   }
 
   .main-title {
     font-size: 42px;
+    font-weight: 100;
   }
 
   .breads {
@@ -1644,6 +1660,10 @@ body::-webkit-scrollbar {
     padding: 10px;
   }
 
+  .input-type {
+    font-weight: 100;
+  }
+
   .modal-type__content {
     padding: 25px 20px;
   }
@@ -1672,10 +1692,6 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 480px) {
-  .burger {
-    right: -200%;
-  }
-
   .main-item__img {
     height: 170px;
   }

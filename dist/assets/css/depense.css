@@ -1338,6 +1338,10 @@
   grid-area: 7/9/13/13;
 }
 
+.services__item:hover .services__item--text {
+  font-weight: 400;
+}
+
 .services__item--mob {
   display: none;
 }
@@ -1391,7 +1395,7 @@
   font-family: "Jost", sans-serif;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 130%;
   min-height: 90px;
 }
@@ -2000,7 +2004,6 @@
   font-style: normal;
   font-weight: 300;
   line-height: 150%;
-  /* 21px */
 }
 
 .order__congrats--btn {
@@ -2251,6 +2254,15 @@
   cursor: pointer;
 }
 
+.order .contacts__form--checkout b {
+  font-weight: 200;
+}
+
+.order .contacts__form--checkout b a {
+  font-weight: 200;
+  text-decoration: underline;
+}
+
 .form__top {
   margin-bottom: 50px;
 }
@@ -2344,6 +2356,7 @@
 .category__tab.active {
   background: var(--Red, #860117);
   color: var(--White, #FDFDFD);
+  font-weight: 600;
 }
 
 .category__items {
@@ -4172,6 +4185,19 @@
 
   .product__name {
     font-size: 24px;
+    font-weight: 250;
+  }
+
+  .product__art {
+    font-weight: 250;
+  }
+
+  .product__price b {
+    font-weight: 250;
+  }
+
+  .product__price a span {
+    font-weight: 250;
   }
 
   .watch {
@@ -4252,10 +4278,12 @@
   .collect__info b {
     font-size: 32px;
     margin-bottom: 5px;
+    font-weight: 100;
   }
 
   .collect__info p {
     font-size: 16px;
+    font-weight: 300;
   }
 
   .policy__title {
@@ -4326,6 +4354,7 @@
 
   .contacts__left b {
     font-size: 24px;
+    font-weight: 100;
   }
 
   .contacts__form {
@@ -4340,6 +4369,10 @@
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
+  }
+
+  .contacts__form--checkout b {
+    font-weight: 100;
   }
 
   .contacts__form--btn.black__btn {
@@ -4383,6 +4416,10 @@
 
   .lab__top b {
     font-size: 20px;
+  }
+
+  .lab__right p {
+    font-weight: 100;
   }
 
   .lab__gray {
@@ -4438,10 +4475,12 @@
 
   .banner2__content2 p {
     font-size: 14px;
+    font-weight: 250;
   }
 
   .banner2__content2 b {
     font-size: 14px;
+    font-weight: 500;
   }
 
   .banner2__btn.black__btn {
@@ -4482,6 +4521,7 @@
 
   .services__title {
     font-size: 36px;
+    font-weight: 100;
   }
 
   .services__item--mob {
@@ -4510,8 +4550,13 @@
     margin-top: 20px;
   }
 
+  .services__item--text {
+    font-weight: 300;
+  }
+
   .history__title {
     font-size: 36px;
+    font-weight: 100;
   }
 
   .history__top b {
@@ -4522,6 +4567,7 @@
     font-size: 16px;
     margin-bottom: 40px;
     opacity: 0.7;
+    font-weight: 250;
   }
 
   .invest {
@@ -4539,6 +4585,7 @@
 
   .founder__text2 p {
     font-size: 14px;
+    font-weight: 250;
   }
 
   .order__total p {
@@ -4562,6 +4609,10 @@
     padding: 20px;
   }
 
+  .order__congrats--bot span {
+    font-weight: 250;
+  }
+
   .order__tab {
     padding-right: 20px;
     margin-right: 20px;
@@ -4583,6 +4634,15 @@
         -ms-flex-pack: center;
             justify-content: center;
     margin-left: 0;
+  }
+
+  .order .contacts__form--checkout b {
+    font-weight: 100;
+  }
+
+  .order .contacts__form--checkout b a {
+    font-weight: 400;
+    text-decoration: none;
   }
 
   .category__top {
@@ -4610,6 +4670,7 @@
   .category__tab.active {
     background: rgba(134, 1, 23, 0.15);
     color: var(--Black, #000);
+    font-weight: 400;
   }
 
   .category__items {
@@ -4653,10 +4714,20 @@
 
   .product__also--title {
     font-size: 36px;
+    font-weight: 100;
+    line-height: 110%;
   }
 
   .product__also--img {
     height: 160px;
+  }
+
+  .product__also b {
+    font-weight: 100;
+  }
+
+  .product__also p {
+    font-weight: 100;
   }
 
   .product .breads {
@@ -4665,6 +4736,7 @@
 
   .watch__title {
     font-size: 36px;
+    font-weight: 100;
   }
 
   .watch .container {

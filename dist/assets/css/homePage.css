@@ -423,6 +423,7 @@
 
   .block__info b {
     font-size: 40px;
+    font-weight: 400;
   }
 
   .block__info p {
@@ -499,6 +500,7 @@
     font-size: 14px;
     max-width: 80%;
     margin-bottom: 15px;
+    font-weight: 300;
   }
 
   .banner__link {
@@ -547,6 +549,7 @@
 
   .block__info p {
     font-size: 16px;
+    font-weight: 300;
   }
 
   .block__items {
@@ -561,6 +564,7 @@
   .ques__title {
     font-size: 30px;
     margin: 0 20px;
+    font-weight: 100;
   }
 
   .ques__items {
