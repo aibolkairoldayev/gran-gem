@@ -1320,6 +1320,10 @@ body::-webkit-scrollbar {
   padding-right: 12px;
 }
 
+.side__items::-webkit-scrollbar {
+  display: none;
+}
+
 .side__total {
   display: -webkit-box;
   display: -ms-flexbox;

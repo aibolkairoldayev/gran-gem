@@ -433,7 +433,7 @@
   font-weight: 250;
   line-height: 130%;
   display: block;
-  max-width: 490px;
+  max-width: 485px;
 }
 
 .contacts__form {
@@ -493,6 +493,8 @@
   font-style: normal;
   font-weight: 250;
   line-height: normal;
+  position: relative;
+  padding-right: 20px;
 }
 
 .contacts__form input::-moz-placeholder {
@@ -501,6 +503,8 @@
   font-style: normal;
   font-weight: 250;
   line-height: normal;
+  position: relative;
+  padding-right: 20px;
 }
 
 .contacts__form input:-ms-input-placeholder {
@@ -509,6 +513,8 @@
   font-style: normal;
   font-weight: 250;
   line-height: normal;
+  position: relative;
+  padding-right: 20px;
 }
 
 .contacts__form input::-ms-input-placeholder {
@@ -517,6 +523,8 @@
   font-style: normal;
   font-weight: 250;
   line-height: normal;
+  position: relative;
+  padding-right: 20px;
 }
 
 .contacts__form input::placeholder {
@@ -525,26 +533,48 @@
   font-style: normal;
   font-weight: 250;
   line-height: normal;
+  position: relative;
+  padding-right: 20px;
 }
 
 .contacts__form input::-webkit-input-placeholder::after {
-  content: "wqwq";
+  position: absolute;
+  top: 3px;
+  right: 0;
+  color: #860117;
+  content: "*";
 }
 
 .contacts__form input::-moz-placeholder::after {
-  content: "wqwq";
+  position: absolute;
+  top: 3px;
+  right: 0;
+  color: #860117;
+  content: "*";
 }
 
 .contacts__form input:-ms-input-placeholder::after {
-  content: "wqwq";
+  position: absolute;
+  top: 3px;
+  right: 0;
+  color: #860117;
+  content: "*";
 }
 
 .contacts__form input::-ms-input-placeholder::after {
-  content: "wqwq";
+  position: absolute;
+  top: 3px;
+  right: 0;
+  color: #860117;
+  content: "*";
 }
 
 .contacts__form input::placeholder::after {
-  content: "wqwq";
+  position: absolute;
+  top: 3px;
+  right: 0;
+  color: #860117;
+  content: "*";
 }
 
 .contacts__form--bot {
@@ -1020,6 +1050,12 @@
   margin: 120px auto 0;
 }
 
+.lab__slider .slick-slide {
+  max-height: 182px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .lab__slider .slick-arrow {
   position: absolute;
   top: 50%;
@@ -1073,6 +1109,16 @@
 
 .stones {
   margin-bottom: 65px;
+}
+
+.stones__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
 }
 
 .stones__items {
@@ -3517,6 +3563,11 @@
     height: 230px;
   }
 
+  .stones__item {
+    margin: 0 14px;
+    height: 115px;
+  }
+
   .stones__items {
     display: block;
   }
@@ -3526,9 +3577,12 @@
   }
 
   .stones__items img {
-    margin: 0 14px;
     -o-object-fit: contain;
        object-fit: contain;
+    margin-top: 65%;
+    -webkit-transform: translateY(-55%);
+        -ms-transform: translateY(-55%);
+            transform: translateY(-55%);
   }
 
   .stones__items img:nth-child(1) {
@@ -4454,6 +4508,14 @@
   .lab__bot--content {
     grid-template-columns: 1fr;
     padding: 50px;
+  }
+
+  .stones__item {
+    height: 75px;
+  }
+
+  .stones__items img {
+    margin-top: 90%;
   }
 
   .banner2__top {
