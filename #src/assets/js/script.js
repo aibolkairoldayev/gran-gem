@@ -176,24 +176,55 @@ $('.sizing__wrapper').click(()=> {
 //congrats textarea in order page
 if ($('.order').length) {
     $(document).ready(function () {
-  const $shown = $('#congrats__shown');
-  const $hidden = $('#congrats__hidden');
-  const $button = $('.order__congrats--btn');
+        const $shown = $('#congrats__shown');
+        const $hidden = $('#congrats__hidden');
+        const $button = $('.order__congrats--btn');
 
-  $shown.on('input', function () {
-    if ($(this).val().trim() !== '') {
-      $button.addClass('active');
-    } else {
-      $button.removeClass('active');
-    }
-  });
+        $shown.on('input', function () {
+            if ($(this).val().trim() !== '') {
+            $button.addClass('active');
+            } else {
+            $button.removeClass('active');
+            }
+        });
 
-  $button.on('click', function () {
-    const text = $shown.val();
-    $hidden.val(text); 
-    console.log('Передано в #congrats__hidden:', $hidden.val());
-    $button.removeClass('active');
-  });
-});
+        $button.on('click', function () {
+            const text = $shown.val();
+            $hidden.val(text); 
+            console.log('Передано в #congrats__hidden:', $hidden.val());
+            $button.removeClass('active');
+        });
+    });
 
 }
+
+//placeholders in forms with red *
+$(document).ready(function () {
+  $('.contacts__label input').each(function () {
+    const $input = $(this);
+    const $label = $input.closest('.contacts__label');
+    const $b = $label.find('b');
+
+    // Поведение при вводе текста (для всех)
+    $input.on('input', function () {
+      if ($input.val().trim() !== '') {
+        $b.hide();
+      } else if (!$label.hasClass('tel__label')) {
+        $b.show(); // для tel__label не показываем обратно на input
+      }
+    });
+
+    // Поведение при фокусе (только для tel__label)
+    if ($label.hasClass('tel__label')) {
+      $input.on('focus', function () {
+        $b.hide();
+      });
+
+      $input.on('blur', function () {
+        if ($input.val().trim() === '') {
+          $b.show();
+        }
+      });
+    }
+  });
+});

@@ -264,8 +264,15 @@
                     <div class="order__left">
                         <form action="">
                             <div class="form__top">
-                                <input required class="input-type" type="text" placeholder="Имя *">
-                                <input required class="input-type" class="input-type" type="tel" placeholder="Телефон *">
+                                <label for="" class="contacts__label tel__label">
+                                    <b>Имя</b>
+                                    <input required class="input-type" type="text">
+                                </label>
+                                <label for="" class="contacts__label tel__label">
+                                    <b>Телефон</b>
+                                    <input required class="input-type" class="input-type" type="tel">
+                                </label>
+                                
                             </div>
 
                             <div class="order__tabs">
@@ -289,7 +296,11 @@
                             <div class="order__address active">
                                 <b>Адрес</b>
                                 <input class="input-type" type="text" placeholder="г. Алматы">
-                                <input id="address-input" required class="input-type" type="text" placeholder="Улица / Дом  *">
+                                <label for="" class="contacts__label tel__label">
+                                    <b>Улица / Дом</b>
+                                    <input id="address-input" required class="input-type" type="text">
+                                </label>
+                                
                                 <input class="input-type" type="text" placeholder="Комментарий">
                             </div>
 
@@ -466,8 +477,14 @@
         </div>
         <div class="modal1__bot modal-type__bot">
             <form action="">
-                <input type="text" placeholder="Имя *" class="input-type" required>
-                <input type="tel" placeholder="Телефон *" class="input-type" required>
+                <label for="" class="contacts__label tel__label">
+                        <b>Имя</b>
+                        <input type="text" class="input-type" required>
+                </label>
+                <label for="" class="contacts__label tel__label">
+                        <b>Телефон</b>
+                        <input type="tel" class="input-type" required>
+                </label>
                 <input type="text" placeholder="Комментарий" class="input-type">
                 <button type="submit" class="modal1__btn">Отправить</button>
             </form>
