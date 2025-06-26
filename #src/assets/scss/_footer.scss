@@ -155,6 +155,9 @@
         }
     }
     &__email {
-        display: none;
+        @media(max-width: 576px) {
+            display: none;
+        }
+        
     }
 }

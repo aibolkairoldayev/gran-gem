@@ -228,3 +228,72 @@ $(document).ready(function () {
     }
   });
 });
+
+
+//validation checkbox in order page
+$(document).ready(function() {
+  const $checkbox = $('#checkbox1');
+  const $button = $('.order__form--btn');
+
+  $button.prop('disabled', !$checkbox.is(':checked'));
+
+  $checkbox.on('change', function() {
+    $button.prop('disabled', !$(this).is(':checked'));
+  });
+
+  $button.closest('form').on('submit', function(e) {
+    if (!$checkbox.is(':checked')) {
+      e.preventDefault();
+      alert('Пожалуйста, согласитесь с правилами и политикой конфиденциальности.');
+    }
+  });
+});
+
+//category page products tab func
+$(document).ready(function() {
+  $('.category__tab').on('click', function() {
+    // Переключить активный таб
+    $('.category__tab').removeClass('active');
+    $(this).addClass('active');
+
+    // Получить выбранное значение
+    const selectedTab = $(this).data('tab');
+
+    // Перебрать все элементы
+    $('.category__item').each(function() {
+      const itemTab = $(this).data('tab');
+
+      if (selectedTab === 'all' || selectedTab === itemTab) {
+        $(this).removeClass('hide');
+      } else {
+        $(this).addClass('hide');
+      }
+    });
+  });
+});
+
+//show more btn func in categiry page
+$(document).ready(function () {
+    const itemsPerClick = 4;
+    const $itemsContainer = $('.category__items2');
+    const $items = $itemsContainer.find('.category__item');
+    const $btn = $('.category__btn');
+
+    // Если элементов 4 или меньше — показываем все и скрываем кнопку
+    if ($items.length <= itemsPerClick) {
+        $items.show();
+        $btn.hide();
+    } else {
+        // Иначе показываем только первые 4, остальные скрываем
+        $items.hide().slice(0, itemsPerClick).show();
+
+        $btn.on('click', function () {
+            const $hiddenItems = $items.filter(':hidden');
+            $hiddenItems.slice(0, itemsPerClick).fadeIn();
+
+            if ($items.filter(':hidden').length === 0) {
+                $btn.fadeOut();
+            }
+        });
+    }
+});
