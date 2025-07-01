@@ -1,4 +1,64 @@
+// Динамичный базовый урл сайта
+const baseApiUrl = window.location.origin.includes('localhost') 
+  ? 'http://localhost' 
+  : 'https://grangem-master-cvkurw.laravel.cloud';
+
+// Проверка наличия и актуальности цен избранного при загрузке
+function checkFavoritesValidity() {
+  let favs = JSON.parse(localStorage.getItem('favsItemsList')) || [];
+  if (!favs.length) return;
+
+  // Собираем id всех товаров через запятую для запроса
+  const ids = favs.map(item => item.id).join(',');
+  
+  $.ajax({
+    url: `${baseApiUrl}/api/wishlist?products=${ids}`,
+    method: 'GET',
+    success: function(response) {
+      const validIds = response.map(item => String(item.id));
+
+      favs = favs.filter(fav => {
+        const found = response.find(item => String(item.id) === String(fav.id));
+
+        if (!found) {
+          // Удаляем из DOM, localStorage и кнопок, если товара больше нет
+          $(`.side__item[data-id="${fav.id}"]`).remove();
+          $(`#${fav.id}`).find('.add-to-fav').removeClass('active');
+          $('.product__fav').removeClass('active');
+          return false; // Удаляем из favs
+        } else {
+          // Проверяем и обновляем цену, если есть и она изменилась
+          if (found.has_price && found.price_in_dollars) {
+            const currentPrice = fav.price.replace(/[^\d.,]/g, '').replace(',', '.');
+            const newPrice = parseFloat(found.price_in_dollars).toFixed(2);
+
+            if (parseFloat(currentPrice) !== parseFloat(newPrice)) {
+              fav.price = newPrice;
+              $(`.side__item[data-id="${fav.id}"]`).find('p').text(newPrice);
+            }
+          }
+          return true; // Оставляем в favs
+        }
+      });
+
+      localStorage.setItem('favsItemsList', JSON.stringify(favs));
+      $('.fav-count-number').text(favs.length);
+    },
+    error: function() {
+      console.error('Не удалось проверить актуальность избранного');
+    }
+  });
+}
+
 $(document).ready(function () {
+  checkFavoritesValidity();
+});
+
+
+//////old func
+
+$(document).ready(function () {
+  checkFavoritesValidity();
   let favs = JSON.parse(localStorage.getItem('favsItemsList')) || [];
 
   // Функция отрисовки блока избранного
