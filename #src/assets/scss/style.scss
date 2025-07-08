@@ -154,6 +154,13 @@
 
 .main-item {
     position: relative;
+    &:hover {
+        .main-item {
+            &__img {
+                border: 1px solid #000;
+            }
+        }
+    }
     &__favs {
         position: absolute;
         top: 22px;

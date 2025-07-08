@@ -168,6 +168,18 @@
             margin-bottom: 40px;
         }
         h2 {
+            margin: 30px 0 35px;
+            color: #000;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 110%;
+            display: block;
+            @media(max-width: 576px) {
+                font-size: 24px;
+                margin-bottom: 20px;
+                margin-top: 18px;
+            }
             span {
                 margin: 30px 0 35px;
                 color: #000;
@@ -184,6 +196,14 @@
             }
         }
         p {
+            color: #000;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 260%;
+            @media(max-width: 576px) {
+                font-size: 12px;
+            }
             span {
                 color: #000;
                 font-size: 20px;

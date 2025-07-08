@@ -53,11 +53,11 @@ if ($('.contacts__form--label').length) {
 
 
 //radio btw delivery and pickup tabs
-$('input[name="deliveryType"]').on('change', function() {
+$('input[name="delivery_type"]').on('change', function() {
     $('.order__tab').removeClass('active');
     $(this).closest('.order__tab').addClass('active');
   
-    if ($(this).val() === 'pickup') {
+    if ($(this).val() === 'self_pickup') {
       $('.order__address').removeClass('active');
       $('#address-input').removeAttr('required');
     } else if ($(this).val() === 'delivery') {
@@ -155,9 +155,18 @@ $(document).on('change', 'input[type="radio"][name="size"]', function () {
 
 //cart btn activation in product page
 if ($('.product__names').length) {
-    $('.product__size--items input').click(()=> {
-        $('.product__cart').addClass('active')
-    })
+    const $inputs = $('.product__size--items input[type="radio"]');
+
+    // ✅ Если инпут всего один, сразу выбрать его
+    if ($inputs.length === 1) {
+        $inputs.prop('checked', true);
+        $('.product__cart').addClass('active');
+    }
+
+    // ✅ При клике по любому инпуту активировать .product__cart
+    $inputs.on('click', () => {
+        $('.product__cart').addClass('active');
+    });
 }
 
 // open/close sizing img
@@ -257,13 +266,16 @@ $(document).ready(function() {
     $(this).addClass('active');
 
     // Получить выбранное значение
-    const selectedTab = $(this).data('tab');
+    const selectedTab = $(this).attr('data-tab');
 
     // Перебрать все элементы
     $('.category__item').each(function() {
-      const itemTab = $(this).data('tab');
+      const itemTab = $(this).attr('data-tab');
 
-      if (selectedTab === 'all' || selectedTab === itemTab) {
+      if (
+        selectedTab === '0' ||
+        (itemTab && itemTab.split(' ').includes(selectedTab))
+      ) {
         $(this).removeClass('hide');
       } else {
         $(this).addClass('hide');
@@ -296,4 +308,27 @@ $(document).ready(function () {
             }
         });
     }
+});
+
+//order page items adding to form
+$(document).ready(function() {
+    $('form').on('submit', function(e) {
+        // собираем данные всех товаров
+        let orderItemsData = [];
+
+        $('.order__item').each(function() {
+            const id = $(this).find('.order__info span').text().trim();
+            const name = $(this).find('.order__name').text().trim();
+            const price = $(this).find('.order__price').text().trim();
+
+            orderItemsData.push({
+                id: id,
+                name: name,
+                price: price
+            });
+        });
+
+        // вставляем данные в скрытый textarea
+        $('#orderItemsData').val(JSON.stringify(orderItemsData));
+    });
 });

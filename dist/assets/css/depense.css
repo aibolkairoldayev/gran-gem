@@ -287,6 +287,16 @@
   margin-bottom: 60px;
 }
 
+.policy__content h2 {
+  margin: 30px 0 35px;
+  color: #000;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 110%;
+  display: block;
+}
+
 .policy__content h2 span {
   margin: 30px 0 35px;
   color: #000;
@@ -295,6 +305,14 @@
   font-weight: 300;
   line-height: 110%;
   display: block;
+}
+
+.policy__content p {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 260%;
 }
 
 .policy__content p span {
@@ -4419,10 +4437,20 @@
     margin-bottom: 40px;
   }
 
+  .policy__content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 18px;
+  }
+
   .policy__content h2 span {
     font-size: 24px;
     margin-bottom: 20px;
     margin-top: 18px;
+  }
+
+  .policy__content p {
+    font-size: 12px;
   }
 
   .policy__content p span {
