@@ -31,9 +31,9 @@ function checkFavoritesValidity() {
           $('.product__fav').removeClass('active');
           return false;
         } else {
-          if (found.has_price && found.price_in_dollars) {
+          if (found.has_price && found.price) {
             const currentPrice = fav.price.replace(/[^\d.,]/g, '').replace(',', '.');
-            const newPrice = parseFloat(found.price_in_dollars).toFixed(2);
+            const newPrice = parseFloat(found.price).toFixed(2);
 
             if (parseFloat(currentPrice) !== parseFloat(newPrice)) {
               fav.price = newPrice;
@@ -279,9 +279,9 @@ function checkCartValidity() {
           $(`.side.cart .side__item[data-id="${cartItem.id}"]`).remove();
           return false;
         } else {
-          if (found.has_price && found.price_in_dollars) {
+          if (found.has_price && found.price) {
             const currentPrice = cartItem.price.replace(/[^\d.,]/g, '').replace(',', '.');
-            const newPrice = parseFloat(found.price_in_dollars).toFixed(2);
+            const newPrice = parseFloat(found.price).toFixed(2);
 
             if (parseFloat(currentPrice) !== parseFloat(newPrice)) {
               cartItem.price = newPrice;
@@ -352,9 +352,9 @@ function renderOrderItems() {
           $(`.order__item[data-id="${cartItem.id}"]`).remove();
           return false;
         } else {
-          if (found.has_price && found.price_in_dollars) {
+          if (found.has_price && found.price) {
             const currentPrice = cartItem.price.replace(/[^\d.,]/g, '').replace(',', '.');
-            const newPrice = parseFloat(found.price_in_dollars).toFixed(2);
+            const newPrice = parseFloat(found.price).toFixed(2);
 
             if (parseFloat(currentPrice) !== parseFloat(newPrice)) {
               cartItem.price = newPrice + ' ₸';

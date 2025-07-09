@@ -258,6 +258,40 @@ $(document).ready(function() {
   });
 });
 
+//order page send btn activation validation
+$(document).ready(function () {
+    const $orderLeft = $('.order__left');
+
+    if ($orderLeft.length > 0) {
+        const $requiredInputs = $orderLeft.find('input[required]');
+        const $btn = $orderLeft.find('.order__form--btn');
+
+        function toggleButtonActive() {
+            let allFilled = true;
+
+            $requiredInputs.each(function () {
+                if ($.trim($(this).val()) === '') {
+                    allFilled = false;
+                    return false; // прерываем each
+                }
+            });
+
+            if (allFilled) {
+                $btn.addClass('active');
+            } else {
+                $btn.removeClass('active');
+            }
+        }
+
+        // Отслеживаем ввод во все required input
+        $requiredInputs.on('input', toggleButtonActive);
+
+        // Проверка при загрузке (для автозаполнения)
+        toggleButtonActive();
+    }
+});
+
+
 //category page products tab func
 $(document).ready(function() {
   $('.category__tab').on('click', function() {
