@@ -51,21 +51,6 @@ if ($('.contacts__form--label').length) {
     })
 } 
 
-
-//radio btw delivery and pickup tabs
-$('input[name="delivery_type"]').on('change', function() {
-    $('.order__tab').removeClass('active');
-    $(this).closest('.order__tab').addClass('active');
-  
-    if ($(this).val() === 'self_pickup') {
-      $('.order__address').removeClass('active');
-      $('#address-input').removeAttr('required');
-    } else if ($(this).val() === 'delivery') {
-      $('.order__address').addClass('active');
-      $('#address-input').attr('required', 'required');
-    }
-});
-
 //banks tab in order page
 $('input[name="bank"]').on('change', function() {
     $('.order__pay--item').removeClass('active');
@@ -260,13 +245,30 @@ $(document).ready(function() {
 
 //order page send btn activation validation
 $(document).ready(function () {
+
+    //radio btw delivery and pickup tabs
+$('input[name="delivery_type"]').on('change', function() {
+    $('.order__tab').removeClass('active');
+        $(this).closest('.order__tab').addClass('active');
+    
+        if ($(this).val() === 'self_pickup') {
+            $('.order__address').removeClass('active');
+            $('#address-input').removeAttr('required');
+        } else if ($(this).val() === 'delivery') {
+            $('.order__address').addClass('active');
+            $('#address-input').attr('required', 'required');
+        }
+
+        toggleButtonActive();
+    });
     const $orderLeft = $('.order__left');
 
     if ($orderLeft.length > 0) {
-        const $requiredInputs = $orderLeft.find('input[required]');
         const $btn = $orderLeft.find('.order__form--btn');
 
         function toggleButtonActive() {
+            // Получаем актуальный список required input каждый раз
+            const $requiredInputs = $orderLeft.find('input[required]');
             let allFilled = true;
 
             $requiredInputs.each(function () {
@@ -283,13 +285,19 @@ $(document).ready(function () {
             }
         }
 
-        // Отслеживаем ввод во все required input
-        $requiredInputs.on('input', toggleButtonActive);
+        // Отслеживаем ввод во все input (required может добавляться и убираться)
+        $orderLeft.on('input', 'input', toggleButtonActive);
 
-        // Проверка при загрузке (для автозаполнения)
+        // Проверка при загрузке
         toggleButtonActive();
+
+        // Проверка при смене таба
+        $('.order__tab').on('click', function () {
+            toggleButtonActive();
+        });
     }
 });
+
 
 
 //category page products tab func

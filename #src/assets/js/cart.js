@@ -33,7 +33,7 @@ function checkFavoritesValidity() {
         } else {
           if (found.has_price && found.price) {
             const currentPrice = fav.price.replace(/[^\d.,]/g, '').replace(',', '.');
-            const newPrice = parseFloat(found.price).toFixed(2);
+            const newPrice = String(found.price);
 
             if (parseFloat(currentPrice) !== parseFloat(newPrice)) {
               fav.price = newPrice;
@@ -281,7 +281,7 @@ function checkCartValidity() {
         } else {
           if (found.has_price && found.price) {
             const currentPrice = cartItem.price.replace(/[^\d.,]/g, '').replace(',', '.');
-            const newPrice = parseFloat(found.price).toFixed(2);
+            const newPrice = String(found.price);
 
             if (parseFloat(currentPrice) !== parseFloat(newPrice)) {
               cartItem.price = newPrice;
@@ -354,7 +354,7 @@ function renderOrderItems() {
         } else {
           if (found.has_price && found.price) {
             const currentPrice = cartItem.price.replace(/[^\d.,]/g, '').replace(',', '.');
-            const newPrice = parseFloat(found.price).toFixed(2);
+            const newPrice = String(found.price);
 
             if (parseFloat(currentPrice) !== parseFloat(newPrice)) {
               cartItem.price = newPrice + ' ₸';
