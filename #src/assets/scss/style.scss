@@ -166,10 +166,12 @@
         top: 22px;
         right: 26px;
         width: 24px;
+        z-index: 2;
     }
     &__img {
         height: 310px;
         border: 1px solid #000;
+        overflow: hidden;
         @media(max-width: 992px) {
             height: 270px;
         }
@@ -187,6 +189,7 @@
             height: 100%;
             object-fit: cover;
             width: 100%;
+            transform: scale(1.05);
         }
     }
     &__info {

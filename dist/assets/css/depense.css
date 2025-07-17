@@ -2474,6 +2474,7 @@
   height: 310px;
   border: 1px solid #010101;
   margin-bottom: 17px;
+  overflow: hidden;
 }
 
 .category__item--img img {
@@ -2481,6 +2482,9 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .category__item--info {
@@ -2595,6 +2599,7 @@
 .product__black {
   background: #1E1E1E;
   padding: 20px 0 15px;
+  display: none;
 }
 
 .product__black--hidden {

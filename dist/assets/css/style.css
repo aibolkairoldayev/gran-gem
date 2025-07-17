@@ -809,11 +809,13 @@ body::-webkit-scrollbar {
   top: 22px;
   right: 26px;
   width: 24px;
+  z-index: 2;
 }
 
 .main-item__img {
   height: 310px;
   border: 1px solid #000;
+  overflow: hidden;
 }
 
 .main-item__img img {
@@ -822,6 +824,9 @@ body::-webkit-scrollbar {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .main-item__info {
