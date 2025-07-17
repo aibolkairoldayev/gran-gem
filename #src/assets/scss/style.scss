@@ -157,7 +157,7 @@
     &:hover {
         .main-item {
             &__img {
-                border: 1px solid #000;
+                border: none;
             }
         }
     }
@@ -169,6 +169,7 @@
     }
     &__img {
         height: 310px;
+        border: 1px solid #000;
         @media(max-width: 992px) {
             height: 270px;
         }

@@ -318,6 +318,9 @@
             font-style: normal;
             font-weight: 100;
             line-height: 40px; 
+
+            display: none;
+            
             @media(max-width: 992px) {
                 font-size: 22px;
             }

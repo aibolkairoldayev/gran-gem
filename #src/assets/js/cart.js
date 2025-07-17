@@ -517,3 +517,101 @@ $(document).ready(function () {
     renderOrderItems();
   });
 });
+
+
+/////you watched func
+$(document).ready(function() {
+    if ($('.product').length) {
+        const productContent = $('.product__content');
+        const productId = parseInt(productContent.attr('id').replace(/\D/g, ''), 10);
+        const productName = $.trim($('.product__name').text());
+        const productLink = window.location.href;
+        const productImg = $('.product__slider--item picture img').first().attr('src');
+        const productArtRaw = $('.product__art').text().match(/\d+/);
+        const productArt = productArtRaw ? productArtRaw[0] : '';
+        const productPriceRaw = $('.product__price b').text().replace(/\D/g, '');
+        const productPrice = productPriceRaw ? productPriceRaw : '';
+
+        const favsListRaw = localStorage.getItem('favsItemsList');
+        let favsList = [];
+        if (favsListRaw) {
+            try {
+                favsList = JSON.parse(favsListRaw);
+            } catch (e) {}
+        }
+
+        // === Приводим id к числу при проверке избранного ===
+        const isFav = favsList.some(item => parseInt(item.id.replace(/\D/g, ''), 10) === productId);
+
+        const productObj = {
+            id: productId,
+            name: productName,
+            link: productLink,
+            img: productImg,
+            art: productArt,
+            price: productPrice,
+            fav: isFav
+        };
+
+        // === Обновляем watchItemsList ===
+        const watchListRaw = localStorage.getItem('watchItemsList');
+        let watchList = [];
+        if (watchListRaw) {
+            try {
+                watchList = JSON.parse(watchListRaw);
+            } catch (e) {}
+        }
+
+        // Убираем старое вхождение товара
+        watchList = watchList.filter(item => parseInt(item.id, 10) !== productId);
+
+        // Добавляем в конец
+        watchList.push(productObj);
+
+        // Сохраняем
+        localStorage.setItem('watchItemsList', JSON.stringify(watchList));
+
+        // === Рендеринг ===
+        const $watchBlock = $('.watch');
+        const $watchContainer = $('.category__items.category__items3');
+        $watchContainer.empty();
+
+        // Показываем последние 4 (без текущего)
+        const watchListForRender = watchList
+            .filter(item => parseInt(item.id, 10) !== productId)
+            .slice(-4)
+            .reverse();
+
+        if (watchListForRender.length === 0) {
+            $watchBlock.hide();
+        } else {
+            $watchBlock.show();
+            watchListForRender.forEach(item => {
+                const favClass = item.fav ? ' active' : '';
+                const priceText = item.price ? `${item.price} ₸` : 'Цена по запросу';
+                const productHtml = `
+                <a href="${item.link}" class="category__item product0 main-item" id="product${item.id}">
+                    <div class="block__item--favs main-item__favs add-to-fav${favClass}">
+                        <img class="fav--empty" src="/assets/img/icons/favs.svg" alt="cart">
+                        <img class="fav--full" src="/assets/img/icons/favs3.svg" alt="cart">
+                    </div>
+                    <div class="category__item--img">
+                        <picture>
+                            <img class="product0-img" src="${item.img}" alt="product">
+                        </picture>
+                    </div>
+                    <div class="category__item--info">
+                        <span class="product0-art">${item.art}</span>
+                        <b class="product0-name">${item.name}</b>
+                        <p class="product0-price">${priceText}</p>
+                    </div>
+                </a>
+                `;
+                $watchContainer.append(productHtml);
+            });
+        }
+    }
+});
+
+console.log('fav:', localStorage.getItem('favsItemsList'));
+console.log('watch:', localStorage.getItem('watchItemsList'));

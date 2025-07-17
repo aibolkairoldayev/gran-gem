@@ -480,6 +480,7 @@ body::-webkit-scrollbar {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  visibility: hidden;
 }
 
 .burger__socials {
@@ -800,7 +801,7 @@ body::-webkit-scrollbar {
 }
 
 .main-item:hover .main-item__img {
-  border: 1px solid #000;
+  border: none;
 }
 
 .main-item__favs {
@@ -812,6 +813,7 @@ body::-webkit-scrollbar {
 
 .main-item__img {
   height: 310px;
+  border: 1px solid #000;
 }
 
 .main-item__img img {
