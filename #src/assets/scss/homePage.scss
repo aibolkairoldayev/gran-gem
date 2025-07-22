@@ -272,8 +272,11 @@
     &__icon {
         position: absolute;
         top: 30px;
-        right: 32px;
-        width: 42px;
+        right: 10px;
+        width: 130px;
+        @media(max-width: 576px) {
+            width: 100px;
+        }
     }
     &__info {
         position: absolute;

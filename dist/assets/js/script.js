@@ -374,3 +374,18 @@ $(document).ready(function() {
         $('#orderItemsData').val(JSON.stringify(orderItemsData));
     });
 });
+
+
+//header numbers dropdown func
+$(document).ready(function() {
+    $('.header__number--btn').on('click', function(e) {
+        e.stopPropagation(); // чтобы клик не всплывал на документ
+        $('.header__number').toggleClass('active');
+    });
+
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.header__number').length) {
+            $('.header__number').removeClass('active');
+        }
+    });
+});

@@ -218,6 +218,7 @@ body::-webkit-scrollbar {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
+  position: relative;
 }
 
 .header__logo {
@@ -254,12 +255,92 @@ body::-webkit-scrollbar {
 }
 
 .header__number {
-  color: var(--Black, #000);
-  text-align: center;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 250;
-  line-height: normal;
+  position: absolute;
+  right: 165px;
+  top: 7px;
+}
+
+.header__number.active .header__number--hidden {
+  display: block;
+}
+
+.header__number.active .header__number--black {
+  display: none;
+}
+
+.header__number.active .header__number--white {
+  display: block;
+}
+
+.header__number.active .header__number--btn {
+  background-color: #000;
+  opacity: 0.9;
+  border-radius: 5px 5px 0 0;
+}
+
+.header__number--white {
+  display: none;
+}
+
+.header__number--hidden {
+  position: absolute;
+  top: 53px;
+  right: 0;
+  background-color: #000;
+  border-radius: 10px 0 10px 10px;
+  display: none;
+}
+
+.header__number--item {
+  padding: 15px 18px 13px 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__number--item img {
+  min-width: 21px;
+  margin-right: 12px;
+}
+
+.header__number--left p {
+  color: #717171;
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 130%;
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+
+.header__number--left a {
+  color: var(--White, #FFF);
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 130%;
+  white-space: nowrap;
+}
+
+.header__number--left a:hover {
+  opacity: 0.7;
+}
+
+.header__number--line {
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.header__number--btn {
+  padding: 20px 13px 29px;
+  position: relative;
+  top: -18px;
+  left: 0;
+  cursor: pointer;
 }
 
 .header__bot {
@@ -1504,10 +1585,6 @@ body::-webkit-scrollbar {
   }
 
   .header__col:first-child {
-    display: none;
-  }
-
-  .header__number {
     display: none;
   }
 

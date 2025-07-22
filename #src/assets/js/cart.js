@@ -3,12 +3,16 @@ const baseApiUrl = window.location.origin.includes('localhost')
   ? 'http://localhost' 
   : 'https://grangem-master-cvkurw.laravel.cloud';
 
+// Функция форматирования цены с пробелами
+function formatPriceWithSpaces(price) {
+  return String(price).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+}
+
 // Проверка наличия и актуальности цен избранного при загрузке
 function checkFavoritesValidity() {
   let favs = JSON.parse(localStorage.getItem('favsItemsList')) || [];
   if (!favs.length) return;
 
-  // Приведение id вида 'product001' -> '1'
   const cleanedIds = favs.map(item => {
     const rawId = String(item.id).replace(/^product/i, '').replace(/^0+/, '');
     return rawId;
@@ -21,7 +25,6 @@ function checkFavoritesValidity() {
       const validIds = response.map(item => String(item.id));
 
       favs = favs.filter(fav => {
-        // Приведение id fav к числовому виду без 'product' и нулей
         const cleanedFavId = String(fav.id).replace(/^product/i, '').replace(/^0+/, '');
         const found = response.find(item => String(item.id) === cleanedFavId);
 
@@ -37,7 +40,7 @@ function checkFavoritesValidity() {
 
             if (parseFloat(currentPrice) !== parseFloat(newPrice)) {
               fav.price = newPrice;
-              $(`.side__item[data-id="${fav.id}"]`).find('p').text(newPrice);
+              $(`.side__item[data-id="${fav.id}"]`).find('p').text(formatPriceWithSpaces(newPrice));
             }
           }
           return true;
@@ -53,16 +56,10 @@ function checkFavoritesValidity() {
   });
 }
 
-
-
-
-//////old func
-
 $(document).ready(function () {
   checkFavoritesValidity();
   let favs = JSON.parse(localStorage.getItem('favsItemsList')) || [];
 
-  // Функция отрисовки блока избранного
   function addToFavoritesBlock(data) {
     const hasSizes = data.sizes && data.sizes.length;
     const sizeSelector = hasSizes ? `
@@ -90,7 +87,7 @@ $(document).ready(function () {
           <span>${data.code}</span>
           <b>${data.name}</b>
           ${sizeSelector}
-          <p>${data.price}</p>
+          <p>${formatPriceWithSpaces(data.price)}</p>
         </div>
         <div class="side__del">
           <img src="/assets/img/icons/delete.svg" alt="icon">
@@ -138,7 +135,6 @@ $(document).ready(function () {
     };
   }
 
-  // Инициализация
   favs.forEach(item => {
     addToFavoritesBlock(item);
     $('#' + item.id).find('.add-to-fav').addClass('active');
@@ -146,7 +142,6 @@ $(document).ready(function () {
 
   $('.fav-count-number').text(favs.length);
 
-  // Клик по кнопке "в избранное" в списке
   $('.add-to-fav').on('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
@@ -170,7 +165,6 @@ $(document).ready(function () {
     localStorage.setItem('favsItemsList', JSON.stringify(favs));
   });
 
-  // Кнопка "в избранное" на странице товара
   const $pageWrapper = $('.product__content');
   const productId = $pageWrapper.attr('id');
 
@@ -196,7 +190,6 @@ $(document).ready(function () {
     localStorage.setItem('favsItemsList', JSON.stringify(favs));
   });
 
-  // Удаление из блока избранного
   $(document).on('click', '.side__del', function () {
     const $item = $(this).closest('.side__item');
     const id = $item.data('id');
@@ -209,7 +202,6 @@ $(document).ready(function () {
     $('.product__fav').removeClass('active');
   });
 
-   // Клик по select или current
   $(document).on('click', '.side__item--select, .side__item--current', function (e) {
     e.stopPropagation();
     const $select = $(this).closest('.side__item--select');
@@ -217,7 +209,6 @@ $(document).ready(function () {
     $select.find('.side__item--options').toggle();
   });
 
-  // Клик по span в side__item--size
   $(document).on('click', '.side__item--size > span', function (e) {
     e.stopPropagation();
     const $select = $(this).siblings('.side__item--select');
@@ -225,7 +216,6 @@ $(document).ready(function () {
     $select.find('.side__item--options').toggle();
   });
 
-  // Клик по опции
   $(document).on('click', '.side__item--option', function (e) {
     e.stopPropagation();
     const $option = $(this);
@@ -246,7 +236,6 @@ $(document).ready(function () {
     }
   });
 
-  // Клик вне элементов — закрывает всё
   $(document).on('click', function () {
     $('.side__item--options').hide();
   });
@@ -257,15 +246,15 @@ $(document).ready(function () {
 ////////////////cart
 
 // Проверка наличия и актуальности товаров в корзине при загрузке
+function formatPrice(num) {
+  return Number(num).toLocaleString('ru-RU').replace(/,/g, ' ');
+}
+
 function checkCartValidity() {
   let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
   if (!cart.length) return;
 
-  // Приведение id вида 'product001' -> '1'
-  const cleanedIds = cart.map(item => {
-    const rawId = String(item.id).replace(/^product/i, '').replace(/^0+/, '');
-    return rawId;
-  }).join(',');
+  const cleanedIds = cart.map(item => String(item.id).replace(/^product/i, '').replace(/^0+/, '')).join(',');
 
   $.ajax({
     url: `${baseApiUrl}/api/cart-products?products=${cleanedIds}`,
@@ -284,8 +273,8 @@ function checkCartValidity() {
             const newPrice = String(found.price);
 
             if (parseFloat(currentPrice) !== parseFloat(newPrice)) {
-              cartItem.price = newPrice;
-              $(`.side.cart .side__item[data-id="${cartItem.id}"]`).find('p').text(newPrice);
+              cartItem.price = formatPrice(newPrice) + ' ₸';
+              $(`.side.cart .side__item[data-id="${cartItem.id}"]`).find('p').text(formatPrice(newPrice) + ' ₸');
             }
           }
           return true;
@@ -302,7 +291,6 @@ function checkCartValidity() {
   });
 }
 
-///// отрисовка элементов на странице оформления заказа
 function renderOrderItems() {
   let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
   if (!cart.length) return;
@@ -310,34 +298,26 @@ function renderOrderItems() {
   const $container = $('.order__items');
   $container.empty();
 
-  // Отрисовка
   cart.forEach(item => {
+    const priceClean = item.price.replace(/[^\d.,]/g, '').replace(',', '.');
     const orderItem = `
       <div class="order__item" data-id="${item.id}">
         <div class="order__img">
-          <picture>
-            <img src="${item.img}" alt="order">
-          </picture>
+          <picture><img src="${item.img}" alt="order"></picture>
         </div>
         <div class="order__info">
           <span>${item.code}</span>
           <div class="order__name">${item.name}</div>
           <div class="order__drop"></div>
-          <div class="order__price">${item.price}</div>
+          <div class="order__price">${formatPrice(priceClean)} ₸</div>
         </div>
-        <div class="order__del">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" ...>...</svg>
-        </div>
+        <div class="order__del"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">...</svg></div>
       </div>
     `;
     $container.append(orderItem);
   });
 
-  // Проверка актуальности
-  const cleanedIds = cart.map(item => {
-    const rawId = String(item.id).replace(/^product/i, '').replace(/^0+/, '');
-    return rawId;
-  }).join(',');
+  const cleanedIds = cart.map(item => String(item.id).replace(/^product/i, '').replace(/^0+/, '')).join(',');
 
   $.ajax({
     url: `${baseApiUrl}/api/cart-products?products=${cleanedIds}`,
@@ -357,9 +337,9 @@ function renderOrderItems() {
             const newPrice = String(found.price);
 
             if (parseFloat(currentPrice) !== parseFloat(newPrice)) {
-              cartItem.price = newPrice + ' ₸';
-              $(`.side.cart .side__item[data-id="${cartItem.id}"]`).find('p').text(newPrice + ' ₸');
-              $(`.order__item[data-id="${cartItem.id}"]`).find('.order__price').text(newPrice + ' ₸');
+              cartItem.price = formatPrice(newPrice) + ' ₸';
+              $(`.side.cart .side__item[data-id="${cartItem.id}"]`).find('p').text(formatPrice(newPrice) + ' ₸');
+              $(`.order__item[data-id="${cartItem.id}"]`).find('.order__price').text(formatPrice(newPrice) + ' ₸');
             }
           }
           return true;
@@ -376,47 +356,22 @@ function renderOrderItems() {
   });
 }
 
-$(document).on('click', '.order__del', function () {
-  const $item = $(this).closest('.order__item');
-  const id = $item.data('id');
-
-  $item.remove();
-
-  let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
-  cart = cart.filter(item => item.id !== id);
-  localStorage.setItem('cartItemsList', JSON.stringify(cart));
-
-  // Удаляем из боковой корзины, если открыта
-  $(`.side.cart .side__item[data-id="${id}"]`).remove();
-
-  updateCartCount();
-  updateCartTotal();
-});
-
-
-//////old code
- // ====== ФУНКЦИЯ: Обновить общую сумму корзины ======
-  function updateCartTotal() {
+function updateCartTotal() {
   let total = 0;
-
   $('.side.cart .side__item--info p').each(function () {
     const priceText = $(this).text().replace(/[^\d]/g, '');
     const price = parseInt(priceText, 10);
     if (!isNaN(price)) total += price;
   });
+  $('.main-total').text(formatPrice(total) + ' ₸');
+}
 
-  const formatted = total.toLocaleString('ru-RU').replace(/,/g, ' ');
-    $('.main-total').text(formatted + ' ₸');
-  }
-
-   // ====== ФУНКЦИЯ: Обновить счетчик корзины ======
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
-    $('.cart-count-number').text(cart.length);
-  }
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
+  $('.cart-count-number').text(cart.length);
+}
 
 $(document).ready(function () {
-  // ====== INIT: Отрисовка товаров из localStorage при загрузке ======
   let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
   cart.forEach(item => addToCartBlock(item));
   updateCartCount();
@@ -424,55 +379,40 @@ $(document).ready(function () {
   checkCartValidity();
   renderOrderItems();
 
-  // ====== ФУНКЦИЯ: Отрисовать товар в блоке .side.cart ======
   function addToCartBlock(data) {
-    // Проверка на дублирование
-    if ($('.side.cart .side__item[data-id="' + data.id + '"]').length) return;
+    if ($(`.side.cart .side__item[data-id="${data.id}"]`).length) return;
 
+    const priceClean = data.price.replace(/[^\d.,]/g, '').replace(',', '.');
     const cartItem = `
       <div class="side__item" data-id="${data.id}">
-        <div class="side__item--img">
-          <picture>
-            <img src="${data.img}" alt="product">
-          </picture>
-        </div>
+        <div class="side__item--img"><picture><img src="${data.img}" alt="product"></picture></div>
         <div class="side__item--info">
           <span>${data.code}</span>
           <b>${data.name}</b>
           ${data.selectedSize ? `<div class="side__size">Размер ${data.selectedSize}</div>` : ''}
-          <p>${data.price}</p>
+          <p>${formatPrice(priceClean)} ₸</p>
         </div>
-        <div class="side__del">
-          <img src="/assets/img/icons/delete.svg" alt="icon">
-        </div>
+        <div class="side__del"><img src="/assets/img/icons/delete.svg" alt="icon"></div>
       </div>
     `;
     $('.side.cart .side__items').append(cartItem);
   }
 
   function getProductPageData($wrapper) {
-  return {
-    id: $wrapper.attr('id'),
-    img: $wrapper.find('.product__slider--item').first().find('picture img').attr('src') || 'assets/img/noimage.jpg',
-    code: $wrapper.find('.product__code').text(),
-    name: $wrapper.find('.product__name').text(),
-    selectedSize: $wrapper.find('.product__size--selected').text(), // если есть
-    price: $wrapper.find('.product__price').text()
-  };
-}
+    return {
+      id: $wrapper.attr('id'),
+      img: $wrapper.find('.product__slider--item picture img').attr('src') || 'assets/img/noimage.jpg',
+      code: $wrapper.find('.product__code').text(),
+      name: $wrapper.find('.product__name').text(),
+      selectedSize: $wrapper.find('.product__size--selected').text(),
+      price: formatPrice($wrapper.find('.product__price').text().replace(/[^\d.,]/g, '').replace(',', '.')) + ' ₸'
+    };
+  }
 
-
- 
- 
-
-  // ====== ДОБАВИТЬ ТОВАР В КОРЗИНУ СО СТРАНИЦЫ ТОВАРА ======
   const $pageWrapper = $('.product__content');
-  const productId = $pageWrapper.attr('id');
-
   $('.product__cart').on('click', function () {
     const itemData = getProductPageData($pageWrapper);
     let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
-
     const alreadyInCart = cart.some(item => item.id === itemData.id);
     if (!alreadyInCart) {
       cart.push(itemData);
@@ -484,11 +424,9 @@ $(document).ready(function () {
     }
   });
 
-  // ====== ДОБАВИТЬ ВСЕ ИЗ ИЗБРАННОГО В КОРЗИНУ ======
   $(document).on('click', '.side__btn', function () {
     const favs = JSON.parse(localStorage.getItem('favsItemsList')) || [];
     let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
-
     favs.forEach(favItem => {
       const alreadyInCart = cart.some(cartItem => cartItem.id === favItem.id);
       if (!alreadyInCart) {
@@ -496,18 +434,15 @@ $(document).ready(function () {
         addToCartBlock(favItem);
       }
     });
-
     localStorage.setItem('cartItemsList', JSON.stringify(cart));
     updateCartCount();
     updateCartTotal();
-    renderOrderItems()
+    renderOrderItems();
   });
 
-  // ====== УДАЛЕНИЕ ТОВАРА ИЗ КОРЗИНЫ ======
   $(document).on('click', '.side.cart .side__del', function () {
     const $item = $(this).closest('.side__item');
     const id = $item.data('id');
-
     $item.remove();
     let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
     cart = cart.filter(item => item.id !== id);
@@ -516,11 +451,28 @@ $(document).ready(function () {
     updateCartTotal();
     renderOrderItems();
   });
+
+  $(document).on('click', '.order__del', function () {
+    const $item = $(this).closest('.order__item');
+    const id = $item.data('id');
+    $item.remove();
+    let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
+    cart = cart.filter(item => item.id !== id);
+    localStorage.setItem('cartItemsList', JSON.stringify(cart));
+    $(`.side.cart .side__item[data-id="${id}"]`).remove();
+    updateCartCount();
+    updateCartTotal();
+  });
 });
+
 
 
 /////you watched func
 $(document).ready(function() {
+    function formatPrice(num) {
+        return Number(num).toLocaleString('ru-RU').replace(/,/g, ' ');
+    }
+
     if ($('.product').length) {
         const productContent = $('.product__content');
         const productId = parseInt(productContent.attr('id').replace(/\D/g, ''), 10);
@@ -530,7 +482,7 @@ $(document).ready(function() {
         const productArtRaw = $('.product__art').text().match(/\d+/);
         const productArt = productArtRaw ? productArtRaw[0] : '';
         const productPriceRaw = $('.product__price b').text().replace(/\D/g, '');
-        const productPrice = productPriceRaw ? productPriceRaw : '';
+        const productPrice = productPriceRaw ? formatPrice(productPriceRaw) : '';
 
         const favsListRaw = localStorage.getItem('favsItemsList');
         let favsList = [];
@@ -540,7 +492,6 @@ $(document).ready(function() {
             } catch (e) {}
         }
 
-        // === Приводим id к числу при проверке избранного ===
         const isFav = favsList.some(item => parseInt(item.id.replace(/\D/g, ''), 10) === productId);
 
         const productObj = {
@@ -553,7 +504,6 @@ $(document).ready(function() {
             fav: isFav
         };
 
-        // === Обновляем watchItemsList ===
         const watchListRaw = localStorage.getItem('watchItemsList');
         let watchList = [];
         if (watchListRaw) {
@@ -562,21 +512,14 @@ $(document).ready(function() {
             } catch (e) {}
         }
 
-        // Убираем старое вхождение товара
         watchList = watchList.filter(item => parseInt(item.id, 10) !== productId);
-
-        // Добавляем в конец
         watchList.push(productObj);
-
-        // Сохраняем
         localStorage.setItem('watchItemsList', JSON.stringify(watchList));
 
-        // === Рендеринг ===
         const $watchBlock = $('.watch');
         const $watchContainer = $('.category__items.category__items3');
         $watchContainer.empty();
 
-        // Показываем последние 4 (без текущего)
         const watchListForRender = watchList
             .filter(item => parseInt(item.id, 10) !== productId)
             .slice(-4)
@@ -588,7 +531,7 @@ $(document).ready(function() {
             $watchBlock.show();
             watchListForRender.forEach(item => {
                 const favClass = item.fav ? ' active' : '';
-                const priceText = item.price ? `${item.price} ₸` : 'Цена по запросу';
+                const priceText = item.price ? `${formatPrice(item.price.replace(/[^\d.,]/g, '').replace(',', '.'))} ₸` : 'Цена по запросу';
                 const productHtml = `
                 <a href="${item.link}" class="category__item product0 main-item" id="product${item.id}">
                     <div class="block__item--favs main-item__favs add-to-fav${favClass}">
@@ -612,6 +555,3 @@ $(document).ready(function() {
         }
     }
 });
-
-console.log('fav:', localStorage.getItem('favsItemsList'));
-console.log('watch:', localStorage.getItem('watchItemsList'));

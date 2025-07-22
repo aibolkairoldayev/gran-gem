@@ -191,8 +191,8 @@
 .block__icon {
   position: absolute;
   top: 30px;
-  right: 32px;
-  width: 42px;
+  right: 10px;
+  width: 130px;
 }
 
 .block__info {
@@ -535,6 +535,10 @@
 
   .block__img {
     height: 200px;
+  }
+
+  .block__icon {
+    width: 100px;
   }
 
   .block__info {
