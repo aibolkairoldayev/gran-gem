@@ -159,6 +159,9 @@
             &__img {
                 border: none;
             }
+            &__addington {
+                display: flex;
+            }
         }
     }
     &__favs {
@@ -227,6 +230,24 @@
                 font-weight: 100;
             }
         }
+    }
+    &__addington {
+        position: absolute;
+        width: 80%;
+        background-color: #000;
+        left: 10%;
+        z-index: 4;
+        top: 240px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: #fff;
+        display: none;
     }
 }
 
