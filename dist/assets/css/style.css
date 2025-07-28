@@ -963,11 +963,26 @@ body::-webkit-scrollbar {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  display: none;
+}
+
+.main-item__addington b {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   color: #fff;
+}
+
+.main-item__addington.active .main-item__addington--remove {
+  display: block;
+}
+
+.main-item__addington.active .main-item__addington--add {
+  display: none;
+}
+
+.main-item__addington--remove {
   display: none;
 }
 
@@ -1206,9 +1221,6 @@ body::-webkit-scrollbar {
   height: 100%;
   z-index: 600;
   left: 100%;
-  -webkit-transition: 0.2s linear;
-  -o-transition: 0.2s linear;
-  transition: 0.2s linear;
 }
 
 .side.open {
@@ -1581,6 +1593,10 @@ body::-webkit-scrollbar {
 
   .header__logo img {
     width: 155px;
+  }
+
+  .header__number--btn {
+    top: -25px;
   }
 
   .main-item__img {

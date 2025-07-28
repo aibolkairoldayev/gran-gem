@@ -1163,6 +1163,11 @@
   height: 100%;
 }
 
+.stones__item img {
+  width: 100%;
+  height: 100%;
+}
+
 .stones__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1173,53 +1178,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.stones__items .slick-track {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.stones__items img:nth-child(1) {
-  width: 100px;
-  height: 107px;
-}
-
-.stones__items img:nth-child(2) {
-  width: 73px;
-  height: 115px;
-}
-
-.stones__items img:nth-child(3) {
-  width: 118px;
-  height: 88px;
-}
-
-.stones__items img:nth-child(4) {
-  width: 113px;
-  height: 111px;
-}
-
-.stones__items img:nth-child(5) {
-  width: 138px;
-  height: 90px;
-}
-
-.stones__items img:nth-child(6) {
-  width: 117px;
-  height: 110px;
-}
-
-.stones__items img:nth-child(7) {
-  width: 110px;
-  height: 115px;
 }
 
 .about {
@@ -3690,54 +3648,6 @@
     display: block;
   }
 
-  .stones__items .slick-track {
-    display: block;
-  }
-
-  .stones__items img {
-    -o-object-fit: contain;
-       object-fit: contain;
-    margin-top: 65%;
-    -webkit-transform: translateY(-55%);
-        -ms-transform: translateY(-55%);
-            transform: translateY(-55%);
-  }
-
-  .stones__items img:nth-child(1) {
-    width: auto;
-    height: auto;
-  }
-
-  .stones__items img:nth-child(2) {
-    width: auto;
-    height: auto;
-  }
-
-  .stones__items img:nth-child(3) {
-    width: auto;
-    height: auto;
-  }
-
-  .stones__items img:nth-child(4) {
-    width: auto;
-    height: auto;
-  }
-
-  .stones__items img:nth-child(5) {
-    width: auto;
-    height: auto;
-  }
-
-  .stones__items img:nth-child(6) {
-    width: auto;
-    height: auto;
-  }
-
-  .stones__items img:nth-child(7) {
-    width: auto;
-    height: auto;
-  }
-
   .banner2__top {
     max-width: 750px;
   }
@@ -4670,10 +4580,7 @@
 
   .stones__item {
     height: 75px;
-  }
-
-  .stones__items img {
-    margin-top: 90%;
+    margin: 0 8px;
   }
 
   .banner2__top {

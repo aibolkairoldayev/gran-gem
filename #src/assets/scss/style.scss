@@ -242,12 +242,29 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        color: #fff;
+        b {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: #fff;
+        }
         display: none;
+        &.active {
+            .main-item {
+                &__addington {
+                    &--remove {
+                        display: block;
+                    }
+                    &--add {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &--remove {
+            display: none;
+        }
     }
 }
 
@@ -478,7 +495,7 @@
     height: 100%;
     z-index: 600;
     left: 100%;
-    transition: .2s linear;
+    // transition: .2s linear;
     &.open {
         left: 0;
     }
