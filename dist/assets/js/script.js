@@ -139,20 +139,20 @@ $(document).on('change', 'input[type="radio"][name="size"]', function () {
 });
 
 //cart btn activation in product page
-if ($('.product__names').length) {
-    const $inputs = $('.product__size--items input[type="radio"]');
+// if ($('.product__names').length) {
+//     const $inputs = $('.product__size--items input[type="radio"]');
 
-    // ✅ Если инпут всего один, сразу выбрать его
-    if ($inputs.length === 1) {
-        $inputs.prop('checked', true);
-        $('.product__cart').addClass('active');
-    }
+//     // ✅ Если инпут всего один, сразу выбрать его
+//     if ($inputs.length === 1) {
+//         $inputs.prop('checked', true);
+//         $('.product__cart').addClass('active');
+//     }
 
-    // ✅ При клике по любому инпуту активировать .product__cart
-    $inputs.on('click', () => {
-        $('.product__cart').addClass('active');
-    });
-}
+//     // ✅ При клике по любому инпуту активировать .product__cart
+//     $inputs.on('click', () => {
+//         $('.product__cart').addClass('active');
+//     });
+// }
 
 // open/close sizing img
 function openSize() {
