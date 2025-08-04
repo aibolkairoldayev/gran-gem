@@ -239,6 +239,7 @@ body::-webkit-scrollbar {
   font-weight: 700;
   line-height: normal;
   display: block;
+  display: none;
 }
 
 .header__address {
@@ -963,6 +964,7 @@ body::-webkit-scrollbar {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  visibility: hidden;
   display: none;
 }
 

@@ -275,6 +275,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 40px;
+  display: none;
 }
 
 .policy__title {
@@ -4042,6 +4043,26 @@
     margin-bottom: 90px;
   }
 
+  .stones__item {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+
+  .stones__item img {
+    height: auto;
+    width: auto;
+    max-height: 74px;
+  }
+
+  .stones__item {
+    height: 75px;
+    margin: 0 8px;
+  }
+
   .banner2__top {
     max-width: 600px;
   }
@@ -4570,11 +4591,6 @@
   .lab__bot--content {
     grid-template-columns: 1fr;
     padding: 50px;
-  }
-
-  .stones__item {
-    height: 75px;
-    margin: 0 8px;
   }
 
   .banner2__top {
