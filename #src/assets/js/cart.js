@@ -478,7 +478,11 @@ $(document).ready(function() {
         const productId = parseInt(productContent.attr('id').replace(/\D/g, ''), 10);
         const productName = $.trim($('.product__name').text());
         const productLink = window.location.href;
-        const productImg = $('.product__slider--item picture img').first().attr('src');
+        let productImg = $('.product__img--big').attr('src');
+
+        if (!productImg) {
+          productImg = $('.product__slider--item picture img').first().attr('src');
+        }
         const productArtRaw = $('.product__art').text().match(/\d+/);
         const productArt = productArtRaw ? productArtRaw[0] : '';
         const productPriceRaw = $('.product__price b').text().replace(/\D/g, '');
