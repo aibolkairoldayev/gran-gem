@@ -1885,7 +1885,7 @@
         }
     }
     &__right {
-        width: 425px;
+        width: 500px;
         @media(max-width: 1200px) {
             width: 380px;
         }
@@ -1910,7 +1910,7 @@
         }
     }
     &__left {
-        width: calc(100% - 485px);
+        width: calc(100% - 570px);
         @media(max-width: 1200px) {
             width: calc(100% - 400px); 
         }
@@ -1979,7 +1979,7 @@
     }
     &__text {
         display: flex;
-        padding-left: 110px;
+        padding-left: 45px;
         @media(max-width: 1200px) {
             padding-left: 0;       
         }

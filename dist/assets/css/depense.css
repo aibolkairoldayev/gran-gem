@@ -1645,7 +1645,7 @@
 }
 
 .founder__right {
-  width: 425px;
+  width: 500px;
 }
 
 .founder__right.mob768 {
@@ -1653,7 +1653,7 @@
 }
 
 .founder__left {
-  width: calc(100% - 485px);
+  width: calc(100% - 570px);
 }
 
 .founder__hours--top {
@@ -1699,7 +1699,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 110px;
+  padding-left: 45px;
 }
 
 .founder__text img {
