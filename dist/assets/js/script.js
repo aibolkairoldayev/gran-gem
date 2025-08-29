@@ -389,3 +389,75 @@ $(document).ready(function() {
         }
     });
 });
+
+//filter in category page
+$(document).ready(function () {
+  // ================== Базовый функционал дропдауна ==================
+  $(document).on('click', '.category__filter--current', function (e) {
+    e.stopPropagation();
+    const $parent = $(this).closest('.category__filter');
+    $('.category__filter').not($parent).removeClass('open');
+    $parent.toggleClass('open');
+  });
+
+  $(document).on('click', '.category__filter--other', function (e) {
+    e.stopPropagation();
+    const $parent = $(this).closest('.category__filter');
+    const text = $(this).text().trim();
+    $parent.find('.category__filter--current p').text(text);
+    $parent.removeClass('open');
+    $parent.find('.category__filter--other').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  $(document).on('click', function () {
+    $('.category__filter').removeClass('open');
+  });
+
+  // ================== Сортировка по цене ==================
+  // сохраняем изначальный порядок
+  $(".category__item").each(function (index) {
+    $(this).attr("data-default-order", index + 1);
+  });
+
+  $(document).on("click", ".category__filter1 .category__filter--other", function (e) {
+    e.stopPropagation();
+
+    const value = $(this).data("price"); // default / increase / decrease
+    const text = $(this).text().trim();
+
+    // меняем текст в current (он уже меняется выше, можно убрать дублирование при желании)
+    $(this).closest(".category__filter").find(".category__filter--current p").text(text);
+
+    // собираем товары
+    let $items = $(".category__item");
+
+    if (value === "default") {
+      $items.each(function () {
+        $(this).css("order", $(this).attr("data-default-order"));
+      });
+      return;
+    }
+
+    let itemsArr = $items.toArray().map((el) => {
+      let $el = $(el);
+      let priceText = $el.find(".product0-price").text().replace(/\s+/g, "");
+      let price = parseInt(priceText.replace(/[^0-9]/g, ""), 10);
+      if (isNaN(price)) price = null;
+      return { el: $el, price: price };
+    });
+
+    itemsArr.sort((a, b) => {
+      if (a.price === null && b.price === null) return 0;
+      if (a.price === null) return 1;
+      if (b.price === null) return -1;
+      return value === "increase" ? a.price - b.price : b.price - a.price;
+    });
+
+    itemsArr.forEach((item, index) => {
+      item.el.css("order", index + 1);
+    });
+  });
+});
+
+
