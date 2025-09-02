@@ -426,10 +426,8 @@ $(document).ready(function () {
     const value = $(this).data("price"); // default / increase / decrease
     const text = $(this).text().trim();
 
-    // меняем текст в current (он уже меняется выше, можно убрать дублирование при желании)
     $(this).closest(".category__filter").find(".category__filter--current p").text(text);
 
-    // собираем товары
     let $items = $(".category__item");
 
     if (value === "default") {
@@ -458,6 +456,26 @@ $(document).ready(function () {
       item.el.css("order", index + 1);
     });
   });
+
+  // ================== Фильтр по камню ==================
+  $(document).on("click", ".category__filter2 .category__filter--other", function (e) {
+    e.stopPropagation();
+
+    const stoneValue = $(this).data("stone"); // выбранное значение
+    const text = $(this).text().trim();
+
+    $(this).closest(".category__filter").find(".category__filter--current p").text(text);
+
+    // фильтрация товаров
+    $(".category__item").each(function () {
+      const $item = $(this);
+      const stones = ($item.attr("data-stone2") || "").split(" ").map(Number);
+
+      if (stoneValue === 0 || stones.includes(stoneValue)) {
+        $item.css("display", "");
+      } else {
+        $item.css("display", "none");
+      }
+    });
+  });
 });
-
-

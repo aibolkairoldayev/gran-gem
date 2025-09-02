@@ -222,7 +222,7 @@
         }
         b {
             color: var(--Red, #860117);
-            font-size: 14px;
+            font-size: 18px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
@@ -430,7 +430,7 @@
         }
         b {
             color: var(--Black, #000);
-            font-size: 14px;
+            font-size: 18px;
             font-style: normal;
             font-weight: 500;
             line-height: 130%; /* 285.714% */
@@ -578,7 +578,7 @@
             b {
                 display: flex;
                 color: var(--Black, #000);
-                font-size: 14px;
+                font-size: 18px;
                 font-style: normal;
                 font-weight: 100;
                 line-height: normal;
@@ -586,7 +586,7 @@
             }
             p {
                 color: var(--Red, #860117);
-                font-size: 14px;
+                font-size: 18px;
                 font-style: normal;
                 font-weight: 100;
                 line-height: normal;
@@ -601,7 +601,7 @@
             
             span {
                 color: var(--Black, #000);
-                font-size: 14px;
+                font-size: 18px;
                 font-style: normal;
                 font-weight: 100;
                 line-height: normal;
@@ -611,7 +611,7 @@
         }
         &--current {
             color: var(--Black, #000);
-            font-size: 14px;
+            font-size: 18px;
             font-style: normal;
             font-weight: 600;
             line-height: normal;
@@ -683,14 +683,14 @@
         margin-bottom: 30px;
         b {
             color: var(--Black, #000);
-            font-size: 14px;
+            font-size: 18px;
             font-style: normal;
             font-weight: 100;
             line-height: normal;
         }
         p {
             color: var(--Red, #860117);
-            font-size: 14px;
+            font-size: 18px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
@@ -727,7 +727,7 @@
         b {
             color: var(--Black, #231F20);
             font-family: "Commissioner", sans-serif;
-            font-size: 14px;
+            font-size: 18px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
