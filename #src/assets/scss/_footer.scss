@@ -16,7 +16,7 @@
         }
     }
     &__right {
-        gap: 90px;
+        gap: 70px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -65,7 +65,7 @@
             flex-direction: column-reverse;
         }
         &--links {
-            width: 51%;
+            width: 45%;
             display: flex;
             align-items: center;
             @media(max-width: 1200px) {
@@ -104,7 +104,7 @@
         }
     }
     &__rights {
-        width: 43%;
+        width: 54%;
         color: rgba(30, 30, 30, 0.80);
         font-family: "Jost", sans-serif;
         font-size: 18px;
