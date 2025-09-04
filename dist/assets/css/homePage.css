@@ -216,6 +216,7 @@
   line-height: 40px;
   display: block;
   margin-bottom: 20px;
+  white-space: nowrap;
 }
 
 .block__info p {
@@ -543,7 +544,7 @@
 
   .block__info {
     left: 25px;
-    bottom: 0px;
+    bottom: 15px;
   }
 
   .block__info b {

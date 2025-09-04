@@ -286,7 +286,7 @@
         flex-direction: column;
         @media(max-width: 576px) {
             left: 25px;
-            bottom: 0px;
+            bottom: 15px;
         }
         b {
             color: var(--Black, #000);
@@ -296,6 +296,7 @@
             line-height: 40px; 
             display: block;
             margin-bottom: 20px;
+            white-space: nowrap;
             @media(max-width: 1200px) {
                 font-size: 60px;
             }
