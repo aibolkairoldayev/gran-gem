@@ -216,7 +216,9 @@
   line-height: 40px;
   display: block;
   margin-bottom: 20px;
-  white-space: nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .block__info p {

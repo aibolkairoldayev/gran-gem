@@ -2787,6 +2787,9 @@
                 font-size: 18px;
                 font-weight: 700;
                 line-height: normal;
+                @media(max-width: 576px) {
+                    font-size: 12px;
+                }
             }
             p {
                 color: var(--Black, #231F20);
@@ -2795,6 +2798,9 @@
                 font-weight: 400;
                 line-height: normal;
                 margin: 0 12px 0 7px;
+                @media(max-width: 576px) {
+                    font-size: 12px;
+                }
             }
             svg {
                 transition: .2s linear;
@@ -2817,6 +2823,9 @@
             cursor: pointer;
             padding: 5px;
             font-size: 18px;
+            @media(max-width: 576px) {
+                font-size: 12px;
+            }
             &:hover {
                 background-color: #f7f7f7;
             }

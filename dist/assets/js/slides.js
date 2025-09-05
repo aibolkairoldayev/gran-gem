@@ -165,7 +165,8 @@ if($(window).width() > 768) {
 
 //product page also block slider
 if($(window).width() < 992) {
-    $('.category__items3').slick({
+   setTimeout(() => {
+         $('.category__items3').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         infinite: false,
@@ -180,4 +181,5 @@ if($(window).width() < 992) {
             },
         ]   
     });
+   }, 1000);
 }

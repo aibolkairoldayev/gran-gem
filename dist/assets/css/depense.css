@@ -4992,6 +4992,18 @@
     margin-bottom: 15px;
   }
 
+  .category__filter--current b {
+    font-size: 12px;
+  }
+
+  .category__filter--current p {
+    font-size: 12px;
+  }
+
+  .category__filter--other {
+    font-size: 12px;
+  }
+
   .category__tabs {
     overflow-x: scroll;
   }

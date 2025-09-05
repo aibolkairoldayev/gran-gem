@@ -296,7 +296,7 @@
             line-height: 40px; 
             display: block;
             margin-bottom: 20px;
-            white-space: nowrap;
+            width: fit-content;
             @media(max-width: 1200px) {
                 font-size: 60px;
             }
