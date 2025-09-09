@@ -371,6 +371,15 @@ function updateCartCount() {
   $('.cart-count-number').text(cart.length);
 }
 
+// 🆕 Функция для полной очистки корзины
+function emptyCart() {
+  localStorage.removeItem('cartItemsList'); // убираем из localStorage
+  $('.side.cart .side__items').empty(); // очищаем блок с товарами в корзине
+  $('.order__items').empty(); // очищаем блок заказа
+  $('.cart-count-number').text('0'); // сбрасываем счётчик
+  $('.main-total').text('0 ₸'); // сбрасываем итоговую сумму
+}
+
 $(document).ready(function () {
   let cart = JSON.parse(localStorage.getItem('cartItemsList')) || [];
   cart.forEach(item => addToCartBlock(item));
@@ -464,8 +473,6 @@ $(document).ready(function () {
     updateCartTotal();
   });
 });
-
-
 
 /////you watched func
 $(document).ready(function() {

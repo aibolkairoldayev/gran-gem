@@ -245,6 +245,20 @@
     }
     &__banner {
         position: relative;
+        &:hover {
+            .block {
+                &__img {
+                    img {
+                        opacity: 1;
+                    }
+                }
+                &__info {
+                    b {
+                        color: #FFF;
+                    }
+                }
+            }
+        }
     }
     &__img {
         width: 100%;

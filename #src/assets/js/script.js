@@ -479,3 +479,13 @@ $(document).ready(function () {
     });
   });
 });
+
+//order completing
+function orderComplete() {
+  openModal2();   // открываем модалку
+  emptyCart();    // очищаем корзину
+
+  setTimeout(function() {
+    window.location.href = '/'; // редирект на главную
+  }, 1000); // 1 секунда
+}
