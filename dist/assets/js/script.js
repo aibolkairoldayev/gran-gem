@@ -359,7 +359,7 @@ $(document).ready(function() {
         let orderItemsData = [];
 
         $('.order__item').each(function() {
-            const id = $(this).find('.order__info span').text().trim();
+            const id = $(this).data('id');
             const name = $(this).find('.order__name').text().trim();
             const price = $(this).find('.order__price').text().trim();
 
@@ -372,6 +372,7 @@ $(document).ready(function() {
 
         // вставляем данные в скрытый textarea
         $('#orderItemsData').val(JSON.stringify(orderItemsData));
+        console.log(orderItemsData);
     });
 });
 
