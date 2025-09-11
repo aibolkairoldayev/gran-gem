@@ -354,6 +354,21 @@ $(document).ready(function () {
 
 //order page items adding to form
 $(document).ready(function() {
+  let orderItemsData2 = [];
+
+    $('.order__item').each(function() {
+        const id = $(this).data('id');
+        const name = $(this).find('.order__name').text().trim();
+        const price = $(this).find('.order__price').text().trim();
+
+        orderItemsData2.push({
+            id: id,
+            name: name,
+            price: price
+        });
+    });
+    console.log(orderItemsData2);
+
     $('form').on('submit', function(e) {
         // собираем данные всех товаров
         let orderItemsData = [];
@@ -372,7 +387,7 @@ $(document).ready(function() {
 
         // вставляем данные в скрытый textarea
         $('#orderItemsData').val(JSON.stringify(orderItemsData));
-        console.log(orderItemsData);
+        
     });
 });
 
