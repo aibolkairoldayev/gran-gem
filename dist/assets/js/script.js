@@ -353,44 +353,19 @@ $(document).ready(function () {
 });
 
 //order page items adding to form
-$(document).ready(function() {
-  let orderItemsData2 = [];
+$('form').on('submit', function() {
+    let orderItemsData = [];
 
     $('.order__item').each(function() {
         const id = $(this).data('id');
         const name = $(this).find('.order__name').text().trim();
         const price = $(this).find('.order__price').text().trim();
-
-        orderItemsData2.push({
-            id: id,
-            name: name,
-            price: price
-        });
+        orderItemsData.push({ id, name, price });
     });
-    console.log(orderItemsData2);
 
-    $('form').on('submit', function(e) {
-        // собираем данные всех товаров
-        let orderItemsData = [];
+    $('#orderItemsData').val(JSON.stringify(orderItemsData));
 
-        $('.order__item').each(function() {
-            const id = $(this).data('id');
-            const name = $(this).find('.order__name').text().trim();
-            const price = $(this).find('.order__price').text().trim();
-
-            orderItemsData.push({
-                id: id,
-                name: name,
-                price: price
-            });
-        });
-
-        // вставляем данные в скрытый textarea
-        $('#orderItemsData').val(JSON.stringify(orderItemsData));
-        
-    });
 });
-
 
 //header numbers dropdown func
 $(document).ready(function() {
@@ -501,7 +476,7 @@ function orderComplete() {
   openModal2();   // открываем модалку
   emptyCart();    // очищаем корзину
 
-  setTimeout(function() {
-    window.location.href = '/'; // редирект на главную
-  }, 1000); // 1 секунда
+  // setTimeout(function() {
+  //   window.location.href = '/'; // редирект на главную
+  // }, 1000); // 1 секунда
 }
