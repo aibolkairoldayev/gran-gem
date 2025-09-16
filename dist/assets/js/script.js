@@ -224,25 +224,6 @@ $(document).ready(function () {
 });
 
 
-//validation checkbox in order page
-$(document).ready(function() {
-  const $checkbox = $('#checkbox1');
-  const $button = $('.order__form--btn');
-
-  $button.prop('disabled', !$checkbox.is(':checked'));
-
-  $checkbox.on('change', function() {
-    $button.prop('disabled', !$(this).is(':checked'));
-  });
-
-  $button.closest('form').on('submit', function(e) {
-    if (!$checkbox.is(':checked')) {
-      e.preventDefault();
-      alert('Пожалуйста, согласитесь с правилами и политикой конфиденциальности.');
-    }
-  });
-});
-
 //order page send btn activation validation
 $(document).ready(function () {
 
@@ -353,18 +334,42 @@ $(document).ready(function () {
 });
 
 //order page items adding to form
-$('form').on('submit', function() {
-    let orderItemsData = [];
+//validation checkbox in order page
+$(document).ready(function() {
+  const $form = $('form');
+  const $checkbox = $('#checkbox1');
+  const $button = $('.order__form--btn');
+  const $hiddenInput = $('#orderItemsData');
 
+  // изначально блокируем кнопку, если чекбокс не отмечен
+  $button.prop('disabled', !$checkbox.is(':checked'));
+
+  // переключение кнопки при клике на чекбокс
+  $checkbox.on('change', function() {
+    $button.prop('disabled', !$(this).is(':checked'));
+  });
+
+  // единый сабмит
+  $form.on('submit', function(e) {
+    // проверка чекбокса
+    if (!$checkbox.is(':checked')) {
+      e.preventDefault();
+      alert('Пожалуйста, согласитесь с правилами и политикой конфиденциальности.');
+      return;
+    }
+
+    // собираем товары
+    let orderItemsData = [];
     $('.order__item').each(function() {
-        const id = $(this).data('id');
-        const name = $(this).find('.order__name').text().trim();
-        const price = $(this).find('.order__price').text().trim();
-        orderItemsData.push({ id, name, price });
+      const id = $(this).data('id');
+      const name = $(this).find('.order__name').text().trim();
+      const price = $(this).find('.order__price').text().trim();
+      orderItemsData.push({ id, name, price });
     });
 
-    $('#orderItemsData').val(JSON.stringify(orderItemsData));
-
+    // записываем в скрытое поле
+    $hiddenInput.val(JSON.stringify(orderItemsData));
+  });
 });
 
 //header numbers dropdown func
