@@ -349,6 +349,18 @@ $(document).ready(function() {
     $button.prop('disabled', !$(this).is(':checked'));
   });
 
+      let orderItemsData = [];
+    $('.order__item').each(function() {
+      const id = $(this).data('id');
+      const name = $(this).find('.order__name').text().trim();
+      const price = $(this).find('.order__price').text().trim();
+      orderItemsData.push({ id, name, price });
+    });
+
+    // записываем в скрытое поле
+    $hiddenInput.val(JSON.stringify(orderItemsData));
+    console.log('товары в инпуте: ' , $hiddenInput.val())
+
   // единый сабмит
   $form.on('submit', function(e) {
     // проверка чекбокса
@@ -359,16 +371,7 @@ $(document).ready(function() {
     }
 
     // собираем товары
-    let orderItemsData = [];
-    $('.order__item').each(function() {
-      const id = $(this).data('id');
-      const name = $(this).find('.order__name').text().trim();
-      const price = $(this).find('.order__price').text().trim();
-      orderItemsData.push({ id, name, price });
-    });
 
-    // записываем в скрытое поле
-    $hiddenInput.val(JSON.stringify(orderItemsData));
   });
 });
 
@@ -481,7 +484,7 @@ function orderComplete() {
   openModal2();   // открываем модалку
   emptyCart();    // очищаем корзину
 
-  // setTimeout(function() {
-  //   window.location.href = '/'; // редирект на главную
-  // }, 1000); // 1 секунда
+  setTimeout(function() {
+    window.location.href = '/';
+  }, 1000); 
 }
