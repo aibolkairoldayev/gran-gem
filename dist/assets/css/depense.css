@@ -2476,6 +2476,10 @@
   cursor: pointer;
 }
 
+.category__filter.category__filter1 {
+  z-index: 12;
+}
+
 .category__filter.open .category__filter--current svg {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);

@@ -351,7 +351,7 @@ $(document).ready(function() {
 
       let orderItemsData = [];
     $('.order__item').each(function() {
-      const id = $(this).data('id');
+      const id = String($(this).data('id')).replace(/\D/g, '');
       const name = $(this).find('.order__name').text().trim();
       const price = $(this).find('.order__price').text().trim();
       orderItemsData.push({ id, name, price });
